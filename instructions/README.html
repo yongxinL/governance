@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Nexora Governance v1.0 - Instructions</title>
+<!-- GENERATED FILE. Do not edit. Source: instructions/README.md -->
+<style>body{font-family:system-ui,sans-serif;max-width:900px;margin:2rem auto;padding:0 1rem;line-height:1.5}table{border-collapse:collapse}td,th{border:1px solid #ccc;padding:4px 8px}code{background:#f4f4f4}.gen{border:1px solid #c90;background:#fff8e6;padding:.75rem;margin-bottom:1.5rem}</style>
+</head>
+<body>
+<div class="gen">
+<p><strong>Generated file - do not edit directly.</strong> This page was generated from <code>instructions/README.md</code>, which is authoritative.</p>
+<ul>
+<li>Governance version: 1.0.0 (tag <code>v1.0.0</code>)</li>
+<li>Generation date: 2026-10-12</li>
+<li>Source path: <code>instructions/README.md</code></li>
+<li>Source SHA-256: <code>52bf817021ede719aca9280c37ded95dca126b1811cd2ad6f0caf56070bc356f</code></li>
+<li>Generator: pandoc 3.6.4 (GitHub-Flavored Markdown to HTML5)</li>
+</ul>
+</div>
+<h1 id="nexora-governance-v10---instructions">Nexora Governance v1.0 -
+Instructions</h1>
+<p><strong>Version:</strong> 1.0.0 · <strong>Tag:</strong>
+<code>v1.0.0</code> · <strong>Status:</strong> Authoritative source.
+<code>README.html</code> in this directory is generated from this file
+and must not be edited directly.</p>
+<p>These instructions explain how to use the package. Detailed rules
+live in the <a href="../manual/README.md">manual</a>; this file
+sequences them and links to the owning chapters.</p>
+<h2 id="1-what-to-read-first">1. What to read first</h2>
+<ol type="1">
+<li><a href="../README.md">Package README</a> - principles and
+navigation.</li>
+<li><a href="../manual/01-governance-policy.md">Chapter 01 - Governance
+policy</a> - authority and non-exception controls.</li>
+<li><a href="../manual/02-information-architecture.md">Chapter 02 -
+Information architecture</a> - where things live.</li>
+<li><a href="../manual/07-spec-kit-standard.md">Chapter 07 - Spec Kit
+standard</a> - workflow ownership.</li>
+<li><a href="../manual/30-adoption-playbook.md">Chapter 30 - Adoption
+playbook</a> - full adoption procedure.</li>
+</ol>
+<h2 id="2-prerequisites">2. Prerequisites</h2>
+<ul>
+<li>A Git repository hosted under the Nexora Forgejo organization or
+equivalent.</li>
+<li>An access path to the central governance repository at tag
+<code>v1.0.0</code>.</li>
+<li>One primary agent: OpenCode (v2 configuration format) or Codex.</li>
+<li>GitHub Spec Kit (<code>specify-cli</code>) installed at a pinned
+release (see chapter 07).</li>
+<li>A named Project Owner.</li>
+</ul>
+<h2 id="new-project-adoption">New-project adoption</h2>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Action</th>
+<th>Owning chapter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Copy the contents of <code>project-template/</code> into the project
+root, <strong>including hidden files</strong> (<code>.codex/</code>).
+Example:
+<code>cp -a project-template/. &lt;project-root&gt;/</code></td>
+<td>30</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Replace customization markers in governance files,
+<code>AGENTS.md</code>, and
+<code>CENTRAL-GOVERNANCE-REFERENCE.md</code>. Do not invent missing
+values.</td>
+<td>30</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Choose the primary agent; create live configuration from
+<code>opencode.json.example</code> or
+<code>.codex/config.toml.example</code>; keep conditional tools
+disabled; keep credentials out of Git.</td>
+<td>20, 21-25</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Create <code>docs/product/vision.md</code> and
+<code>docs/product/requirements.md</code> from the product
+templates.</td>
+<td>08</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Run the pinned
+<code>specify init --here --integration &lt;key&gt;</code>; let Spec Kit
+create <code>.specify/</code> and <code>specs/</code>.</td>
+<td>07</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Reconcile <code>SPEC-KIT-CONSTITUTION-TEMPLATE.md</code> into the
+native constitution, approve it, then remove the template.</td>
+<td>07</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Create <code>specs/README.md</code> only after confirming
+compatibility with the installed Spec Kit version.</td>
+<td>17</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Commit baselines (example messages:
+<code>docs: establish Nexora project governance scaffold</code>,
+<code>docs(product): define product vision and requirements</code>,
+<code>docs(spec): approve project constitution</code>).</td>
+<td>05</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Execute the first governed change through the native workflow.</td>
+<td>06, 07</td>
+</tr>
+</tbody>
+</table>
+<p>Use prompt <a href="../prompts/01-new-project-bootstrap.md">01</a>
+for stages 1-3 and prompt <a
+href="../prompts/04-governance-adoption-review.md">04</a> to review
+readiness for Level 1: Controlled.</p>
+<h2 id="existing-project-adoption">Existing-project adoption</h2>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Action</th>
+<th>Owning chapter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Create an adoption branch; record the current commit and
+working-tree state.</td>
+<td>28</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Add the scaffold without moving or merging legacy documents.</td>
+<td>28</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Run the read-only audit (prompt <a
+href="../prompts/02-existing-project-read-only-audit.md">02</a>).</td>
+<td>28, 29</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Resolve source-of-truth conflicts before any move, merge, rewrite,
+archive, or deletion.</td>
+<td>17, 28</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Approve a migration map (prompt <a
+href="../prompts/03-governance-migration-plan.md">03</a>): safe
+automatic, careful consolidation, owner decision.</td>
+<td>28</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Migrate in controlled batches.</td>
+<td>28</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Introduce SDD incrementally, starting with active and high-risk
+areas.</td>
+<td>06</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Complete adoption and record the adoption state.</td>
+<td>29, 30</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-daily-use">3. Daily use</h2>
+<ul>
+<li>Material behaviour change: native Spec Kit workflow plus Nexora
+gates (<a href="../manual/26-validation-and-quality-gates.md">chapter
+26</a>).</li>
+<li>Simple single-cause defects: Spec Kit <code>bug</code> extension
+within limits B1-B9 (<a href="../manual/07-spec-kit-standard.md">chapter
+07</a>).</li>
+<li>Durable technical decisions: ADR (<a
+href="../manual/09-adr-standard.md">chapter 09</a>).</li>
+<li>Material proposals: RFC (<a
+href="../manual/10-rfc-standard.md">chapter 10</a>).</li>
+<li>Material uncertainty: investigation (<a
+href="../manual/11-investigations-and-lessons.md">chapter 11</a>).</li>
+<li>Switching agents: <a
+href="../manual/19-agent-switching-and-handoffs.md">chapter 19</a> and
+prompt <a href="../prompts/21-agent-switch-handoff.md">21</a>.</li>
+</ul>
+<h2 id="4-upgrading-governance">4. Upgrading governance</h2>
+<p>Read the central <code>CHANGELOG.md</code>, review impact, update
+<code>docs/governance/governance-adoption.md</code> to the new version
+and tag, and commit the adoption as a governed change. Major releases
+require an adoption review using prompt <a
+href="../prompts/04-governance-adoption-review.md">04</a>. See <a
+href="../manual/04-governance-versioning-and-exceptions.md">chapter
+04</a>.</p>
+<h2 id="5-validating-this-package">5. Validating this package</h2>
+<p>Package integrity is verified with <code>MANIFEST.json</code>
+(SHA-256 per file) and the published ZIP SHA-256. See <a
+href="../manual/27-generated-files-manifests-and-packaging.md">chapter
+27</a>.</p>
+<h2 id="6-generated-files">6. Generated files</h2>
+<p><code>README.html</code> is a derivative of this file. If they
+differ, this Markdown file is authoritative and the HTML must be
+regenerated.</p>
+</body>
+</html>
