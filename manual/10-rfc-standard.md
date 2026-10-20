@@ -1,6 +1,6 @@
 # 10. RFC Standard
 
-**Part II** · Owns: RFC triggers, proposal evaluation, alternatives, risk, security, data, operations, migration, outcomes, RFC versus ADR, accepted RFC not proving implementation.
+**Part II** · **Owns:** RFC triggers, proposal evaluation, alternatives, risk, security, data, operations, migration, outcomes, RFC versus ADR, accepted RFC not proving implementation.
 
 ## 10.1 Triggers
 

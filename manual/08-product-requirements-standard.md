@@ -1,6 +1,6 @@
 # 08. Product Requirements Standard
 
-**Part II** · Owns: product vision, problem, users, goals, non-goals, product requirements, constraints, success measures, avoiding technical leakage, relationship to specifications.
+**Part II** · **Owns:** product vision, problem, users, goals, non-goals, product requirements, constraints, success measures, avoiding technical leakage, relationship to specifications.
 
 ## 8.1 Artifacts
 

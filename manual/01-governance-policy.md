@@ -1,6 +1,6 @@
 # 01. Governance Policy
 
-**Part I: Governance foundation** · Owns: purpose, scope, applicability, principles, authority, precedence, solo-owner default, foundational non-exception controls.
+**Part I: Governance foundation** · **Owns:** purpose, scope, applicability, principles, authority, precedence, solo-owner default, foundational non-exception controls.
 
 ## 1.1 Purpose
 

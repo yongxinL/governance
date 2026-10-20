@@ -1,6 +1,6 @@
 # 05. Lifecycle, Ownership, and Approvals
 
-**Part I** · Owns: solo-owner mode, collaborative expansion, approval modes, approval evidence, baseline commits, material approval gates, status-transition control, high-risk review.
+**Part I** · **Owns:** solo-owner mode, collaborative expansion, approval modes, approval evidence, baseline commits, material approval gates, status-transition control, high-risk review.
 
 ## 5.1 Solo-owner mode
 
@@ -51,3 +51,20 @@ Independent human review is recommended where practical and required only where 
 ## 5.8 Status transitions
 
 Material status transitions (for example Draft to Approved, Proposed to Accepted, Candidate to Released) are owner-controlled. Agents may propose transitions; they may not perform them without owner instruction. Status vocabularies are owned by [chapter 16](16-metadata-naming-and-status.md).
+
+### 5.9 Pending approval fields
+
+Templates and automation must not pre-populate an approval mode, approver, or
+approval date for an event that has not occurred. Use an unresolved marker or
+`Pending` until the Project Owner records the actual decision.
+
+The following are distinct facts and must not be conflated:
+
+- a scaffold or initialization date is not an adoption approval date;
+- an artifact prepared by an agent is not an artifact approved by the Project
+  Owner;
+- a placeholder status of `Pending` records that approval has not occurred. It
+  is never evidence that it did.
+
+None of this alters who owns approval. The Project Owner retains material
+approval authority in every case.

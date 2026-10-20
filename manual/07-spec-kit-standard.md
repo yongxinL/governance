@@ -1,6 +1,6 @@
 # 07. Spec Kit Standard
 
-**Part II** · Owns: Spec Kit workflow ownership, native structure, installation and initialization, constitution reconciliation, one active integration, workflow stages, existing-project use, native artifact preservation, the `bug` extension (limits B1-B9), other extensions, version-sensitive guidance.
+**Part II** · **Owns:** Spec Kit workflow ownership, native structure, installation and initialization, constitution reconciliation, one active integration, workflow stages, existing-project use, native artifact preservation, the `bug` extension (limits B1-B9), other extensions, version-sensitive guidance.
 
 > **Version-sensitive guidance.** Verified 2026-10-12 against the official Spec Kit documentation (github.github.com/spec-kit) and the github/spec-kit repository. No specific release number is fixed by this governance release; each project pins `<SPEC_KIT_VERSION>` in its tooling register and re-verifies commands against that version.
 
@@ -10,7 +10,8 @@ GitHub Spec Kit owns the constitution workflow, specify, clarify, plan, checklis
 
 ## 7.2 Installation
 
-Use an official channel only, pinned:
+Use an official channel only, and pinned to `<SPEC_KIT_VERSION>`. Do not
+substitute an invented or unpinned version:
 
 ```bash
 # Example: install from the official repository at a release tag
@@ -24,8 +25,13 @@ Record the version in `docs/governance/tooling-adoption-register.md`.
 
 ## 7.3 Initialization
 
+Initialization is a separate, explicitly approved stage. It is not a side
+effect of copying the project scaffold and must not run automatically during
+inspection or planning.
+
+Initialize in the current repository for the selected primary agent:
+
 ```bash
-# Example: initialize in the current repository for the primary agent
 specify init --here --integration <SPEC_KIT_INTEGRATION_KEY>
 ```
 

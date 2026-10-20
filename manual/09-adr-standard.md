@@ -1,6 +1,6 @@
 # 09. ADR Standard
 
-**Part II** · Owns: ADR triggers, boundaries, metadata, statuses, immutability in meaning, supersession, alternatives, rationale, consequences, relationship to RFCs, specifications, and architecture.
+**Part II** · **Owns:** ADR triggers, boundaries, metadata, statuses, immutability in meaning, supersession, alternatives, rationale, consequences, relationship to RFCs, specifications, and architecture.
 
 ## 9.1 Triggers
 

@@ -1,6 +1,6 @@
 # 03. Document Taxonomy and Boundaries
 
-**Part I** · Owns: artifact types, what each may and may not contain, artifact-boundary rules, proportional creation triggers summary.
+**Part I** · **Owns:** artifact types, what each may and may not contain, artifact-boundary rules, proportional creation triggers summary.
 
 ## 3.1 Taxonomy
 

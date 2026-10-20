@@ -1,6 +1,6 @@
 # 04. Governance Versioning and Exceptions
 
-**Part I** · Owns: patch, minor, and major releases; explicit project adoption; exception types; review triggers; emergency corrections; non-exception controls in the exception context.
+**Part I** · **Owns:** patch, minor, and major releases; explicit project adoption; exception types; review triggers; emergency corrections; non-exception controls in the exception context.
 
 ## 4.1 Release types
 
@@ -11,6 +11,23 @@
 | Major (**x**.0.0) | Source-of-truth change, workflow-owner change, identifier-meaning change, mandatory structure or approval-model change, artifact-authority change | Requires adoption review and possibly migration |
 
 Every release is published as an immutable annotated tag (`vX.Y.Z`) with a `CHANGELOG.md` entry. Tags are never moved or deleted.
+
+### 4.1.1 Owner-approved release-classification exceptions
+
+The Project Owner may approve publishing a release under a lower version number
+than its content would ordinarily warrant. Such an exception must be:
+
+- recorded explicitly in `CHANGELOG.md` and `VERSION.md`;
+- limited to backward-compatible, corrective, or optional material;
+- free of any new mandatory obligation for adopting projects.
+
+An approved exception never permits a breaking change, a hidden migration
+requirement, a weakened foundational control, a change of source-of-truth or
+workflow ownership, or a silent alteration of an identifier meaning. If any of
+those would result, the release is classified on its actual impact and requires
+a separate Project Owner decision.
+
+Release `1.0.1` carries such an approved exception; see `CHANGELOG.md`.
 
 ## 4.2 Explicit adoption
 

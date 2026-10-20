@@ -1,12 +1,12 @@
 # 02. Information Architecture
 
-**Part I** · Owns: central versus project governance, versioned central adoption, full project scaffold, canonical paths, native Spec Kit ownership of paths, authoritative versus supporting content, generated versus source content.
+**Part I** · **Owns:** central versus project governance, versioned central adoption, full project scaffold, canonical paths, native Spec Kit ownership of paths, authoritative versus supporting content, generated versus source content.
 
 ## 2.1 Central versus project governance
 
 | Layer | Location | Contains | Does not contain |
 |---|---|---|---|
-| Central governance | Central repository, released by tag | Manual, instructions, templates, prompts | Project facts |
+| Central governance | Central repository, released by tag | Manual, instructions, templates, prompts, reusable governance skills | Project facts |
 | Project governance | `docs/governance/` in each project | Adoption record, source-of-truth register, exceptions, tooling records | Copies of the manual |
 
 Projects reference the central release; they do not copy the manual. `CENTRAL-GOVERNANCE-REFERENCE.md` in the project root is a concise pointer, not a copy.
@@ -55,3 +55,23 @@ Spec Kit creates and owns `.specify/`, `specs/`, and integration-specific comman
 ## 2.7 Generated versus source content
 
 Source content is edited by people or agents under governance. Generated content (HTML renderings, manifests, coverage reports, tool indexes) is derived and never edited directly. Rules: [chapter 27](27-generated-files-manifests-and-packaging.md).
+
+## 2.8 Reusable governance skills
+
+The central package may include reusable skills under `skills/`. A skill
+orchestrates an approved governance workflow; it is not governance authority.
+A skill must follow the selected immutable governance release, read the
+authoritative instructions and manual, keep project-specific facts outside the
+central reusable template, and stop at Project Owner approval gates.
+
+A skill is optional and non-authoritative. It does not replace `README.md`, the
+instructions, this manual, the prompts, `project-template/`, `MANIFEST.json`,
+native GitHub Spec Kit workflows, or Project Owner approval. It must not commit,
+push, merge, tag, publish, deploy, install or enable tools, or approve without
+explicit authorization. It must not embed project-specific identity in reusable
+central content, and it must not hard-code a deployment-specific governance
+repository as a portable default.
+
+Packaging consequences for `skills/` are owned by
+[chapter 27](27-generated-files-manifests-and-packaging.md); adoption behavior by
+[chapter 30](30-adoption-playbook.md).

@@ -1,6 +1,6 @@
 # 06. Specification-Driven Development
 
-**Part II** · Owns: SDD principles, behaviour-change triggers, specification authority, stable requirement identifiers, controlled specification change, requirement-to-evidence lifecycle, no competing workflow owners.
+**Part II** · **Owns:** SDD principles, behaviour-change triggers, specification authority, stable requirement identifiers, controlled specification change, requirement-to-evidence lifecycle, no competing workflow owners.
 
 ## 6.1 Principles
 
@@ -49,4 +49,19 @@ Existing projects do not retrospectively specify the whole system. Specify incre
 
 ## 6.8 No competing workflow owners
 
-Do not run a second SDD framework, planning tool, or task tracker as an authority for the same work. External issue trackers may mirror tasks for visibility; the native tasks artifact remains authoritative.
+GitHub Spec Kit owns `.specify/`, `specs/`, and the native specification, plan,
+task, analysis, and convergence artifacts. Do not run a second SDD framework,
+planning tool, or task tracker as an authority for the same work, and do not
+reproduce native artifacts under `docs/`. External issue trackers may mirror
+tasks for visibility; the native tasks artifact remains authoritative.
+
+## 6.9 Agent conduct at gates
+
+Agents stop at every approval gate defined by
+[chapter 05](05-lifecycle-ownership-and-approvals.md) and wait for the Project
+Owner. An agent proposes; the Project Owner approves.
+
+Validation that could not be performed is reported as not run, never as passed.
+A check outcome distinguishes `PASS`, `FAIL`, `BLOCKED`, `NOT_RUN`, and
+`NOT_APPLICABLE`; an absent or unexecuted check is `NOT_RUN` and must not be
+presented as a success. Rules: [chapter 26](26-validation-and-quality-gates.md).
