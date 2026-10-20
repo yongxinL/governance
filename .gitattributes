@@ -1,0 +1,7 @@
+* text=auto eol=lf
+*.zip binary
+
+# Repository-only paths: excluded from release archives
+.gitattributes   export-ignore
+.forgejo         export-ignore
+maintenance      export-ignore

@@ -1,0 +1,38 @@
+name: validate
+on:
+  pull_request:
+  push:
+    branches: [main]
+    tags: ['v*']
+
+jobs:
+  integrity:
+    runs-on: ssh-deploy
+    steps:
+      - uses: actions/checkout@v4
+      - name: Manifest and generated-file integrity
+        run: |
+          python3 - <<'EOF'
+          import json, hashlib, os, sys
+          m = json.load(open('MANIFEST.json'))
+          listed = {f['path'] for f in m['files']}
+          errors = []
+          for f in m['files']:
+              b = open(f['path'], 'rb').read()
+              if hashlib.sha256(b).hexdigest() != f['sha256'] or len(b) != f['size']:
+                  errors.append('hash/size mismatch: ' + f['path'])
+          repo_only = ('.git/', '.forgejo/', 'maintenance/', '.gitattributes')
+          for d, _, fs in os.walk('.'):
+              for name in fs:
+                  p = os.path.relpath(os.path.join(d, name)).replace(os.sep, '/')
+                  if p == 'MANIFEST.json' or p.startswith(repo_only):
+                      continue
+                  if p not in listed:
+                      errors.append('not in manifest: ' + p)
+          src = hashlib.sha256(open('instructions/README.md', 'rb').read()).hexdigest()
+          if src not in open('instructions/README.html').read():
+              errors.append('README.html fingerprint does not match README.md')
+          for e in errors: print('::error::' + e)
+          print(f"{len(m['files'])} entries, {len(errors)} errors")
+          sys.exit(1 if errors else 0)
+          EOF
