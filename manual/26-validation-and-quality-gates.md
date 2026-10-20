@@ -1,6 +1,6 @@
 # 26. Validation and Quality Gates
 
-**Part VI** · Owns: project approval gates with entry and exit criteria, pre-implementation gate, task traceability, convergence, release readiness, documentation checks, package release gates, finding severity.
+**Part VI** · **Owns:** project approval gates with entry and exit criteria, pre-implementation gate, task traceability, convergence, release readiness, documentation checks, package release gates, finding severity.
 
 ## 26.1 Project gate sequence
 
@@ -45,12 +45,46 @@ Unexplained authoring markers include the strings `TODO`, `TBD`, `Coming soon`, 
 |---|---|
 | 1 Structure | Required tree present; every scaffold directory indexed; no `.specify/`, `specs/`, specification template, phase template, `.gitkeep`, temporary, cache, or secret files; hidden `.codex/` present |
 | 2 Content completeness | Substantive chapters, prompts, templates; no unexplained authoring markers; customization markers identified; examples labelled; no invented project facts |
-| 3 Governance consistency | D1-D20 decisions preserved |
+| 3 Governance consistency | Historical `D1`-`D20` governance decision labels preserved as written; no silent renumbering or supersession |
 | 4 Authority and duplication | No competing authorities or duplicated authoritative content |
 | 5 Security and tooling | No credentials; conditional tools disabled; tool controls documented |
 | 6 Links, indexes, identifiers | Internal links resolve; indexes complete; identifier formats consistent |
 | 7 Generated artifacts and manifest | HTML fingerprint correct; manifest complete and exact |
 | 8 ZIP and release readiness | Single root, safe paths, clean extraction matches manifest |
+
+### 26.5.1 Gate outcomes and approval
+
+Every gate and every individual check within it records exactly one canonical
+outcome: `PASS`, `FAIL`, `BLOCKED`, `NOT_RUN`, or `NOT_APPLICABLE`, as defined in
+[chapter 13](13-testing-evidence-and-verification.md#1311-canonical-check-outcomes-and-their-mapping).
+
+- A check that was not performed is `NOT_RUN`. It is never `PASS`.
+- An unavailable prerequisite, missing tool, or missing dependency is `BLOCKED`,
+  and its cause is recorded. It is never silently passed.
+- Optional maturity cannot offset a failed mandatory control. A project may not
+  trade a gate failure for optional improvements.
+- Every mandatory gate must be `PASS` before release approval is requested.
+  `FAIL` or `BLOCKED` on any mandatory gate stops the release.
+
+Validation evidence must record, per check: the command or mechanism used, the
+result, the paths or artifacts examined, and any limitation that affects
+conclusion. A gate marked `NOT_RUN` is not a passed gate.
+
+A validator reports a **recommendation**. Release approval is a separate Project
+Owner decision ([chapter 05](05-lifecycle-ownership-and-approvals.md)). Passing
+every gate is a precondition for requesting approval, never the approval itself.
+
+### 26.5.2 Cross-specification coordination in validation
+
+Where a governed cross-specification delivery plan coordinates several
+specifications or systems, validation may assess the coordination itself:
+dependency order, migration and rollback windows, release sequencing, operational
+readiness, and owner checkpoints ([chapter 12](12-planning-and-cross-specification-delivery.md)).
+
+The coordination artifact is validated as coordination only. It never replaces a
+native feature plan and never contains a competing feature task list. Validation
+of a delivery plan must not be read as validation of each participating feature;
+those remain validated through their own native artifacts and evidence.
 
 ## 26.6 Finding severity
 
@@ -59,3 +93,11 @@ Unexplained authoring markers include the strings `TODO`, `TBD`, `Coming soon`, 
 | Blocking | Prevents release or gate passage | Missing required file, broken authoritative link, duplicate specification authority, invalid hash, credential exposure, governance contradiction, unsafe ZIP path |
 | Major | Resolve before release unless reclassified with documented rationale | Missing cross-reference, tool-default inconsistency, incorrect template path, incomplete prompt controls, orphaned governed document |
 | Minor | Non-material wording or formatting | Typographical issues |
+
+### 26.7 Cross-specification delivery coordination
+
+The native Spec Kit plan remains authoritative for each feature. When chapter
+12 triggers apply, an approved cross-specification delivery plan may coordinate
+multiple specifications, releases, systems, migrations, dependencies, and
+owner checkpoints. It does not replace native plans, contain feature tasks, or
+restate requirements.

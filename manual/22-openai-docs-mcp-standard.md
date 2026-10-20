@@ -1,6 +1,6 @@
 # 22. OpenAI Developer Documentation MCP Standard
 
-**Part V** · Owns: purpose, read-only classification, current setup, relevance conditions, data handling, authority boundaries, removal.
+**Part V** · **Owns:** purpose, read-only classification, current setup, relevance conditions, data handling, authority boundaries, removal.
 
 > Verified 2026-10-12 against developers.openai.com Docs MCP documentation. Hosted service; no pinned version.
 
@@ -42,6 +42,24 @@ Queries go to OpenAI's public documentation server. Do not include proprietary c
 ## 22.6 Authority boundaries
 
 Documentation results are external guidance, not project authority.
+
+### 22.6.1 Permission, state, and task authorization
+
+This tool obeys the three-way split defined in
+[chapter 20](20-developer-tooling-and-security.md#2021-permission-state-and-task-authorization-are-distinct):
+
+- **Permission** - whether this tool is permitted for the project at all,
+  recorded in `docs/governance/approved-tooling.md`;
+- **Lifecycle and configuration state** - whether it is installed, configured,
+  and enabled right now, recorded in
+  `docs/governance/tooling-adoption-register.md`;
+- **Task-level authorization** - whether this specific action is approved right
+  now, given by the Project Owner at the time of action.
+
+An enabled tool is not automatically authorized for every action. Destructive,
+privileged, production, publication, deployment, credential-bearing, and
+external-write actions always require explicit Project Owner authorization
+regardless of configuration state.
 
 ## 22.7 Removal
 

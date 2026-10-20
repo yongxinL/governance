@@ -1,6 +1,6 @@
 # 28. Archive, Retention, and Migration
 
-**Part VI** · Owns: canonical retention, archive triggers, legacy documentation, existing-project audit, authority-first migration, safe changes, careful consolidation, owner decisions, sensitive deletion, migration completion.
+**Part VI** · **Owns:** canonical retention, archive triggers, legacy documentation, existing-project audit, authority-first migration, safe changes, careful consolidation, owner decisions, sensitive deletion, migration completion.
 
 ## 28.1 Canonical retention
 
@@ -9,6 +9,34 @@ Completed ADRs, RFCs, investigations, specifications, lessons, and releases stay
 ## 28.2 Archive triggers
 
 Use `docs/archive/` for: legacy documentation displaced during migration, retired documentation sets, obsolete formats, and historical material that no longer belongs in an active area. Each archived item is listed in `docs/archive/README.md` with origin path, date, reason, and replacement link.
+
+### 28.2.1 The archive is not a second source of truth
+
+`docs/archive/` preserves history; it never holds live authority. An archived
+artifact keeps its original identifier, its terminal status, and a link to its
+replacement. Nothing in the archive may be cited as current policy, and a
+conflict between an archived document and an active one is always resolved in
+favour of the active document.
+
+Archived content is not edited to reflect current policy. It is preserved as it
+was, with corrections limited to link repair and an explicit correction note.
+Superseded content is distinguished from obsolete content: superseded material
+still has a live successor, obsolete material simply no longer applies.
+
+### 28.2.2 Retention and removal authority
+
+- Historical decisions and their identifiers are retained permanently. Accepted
+  ADRs and released records are never deleted to tidy an area.
+- Every removal, whether deletion or archival, is recorded with its reason and
+  requires owner authority. An unresolved question or an open conflict is never
+  resolved by deletion.
+- Evidence supporting a released record is retained with it.
+- Audit history is preserved. Rewriting published history is not an archival
+  strategy.
+
+Migration is required only by substantive governance change, never because
+documentation wording, formatting, or examples were improved. A corrective
+documentation release creates no migration obligation for adopting projects.
 
 ## 28.3 Existing-project audit
 

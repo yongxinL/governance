@@ -1,6 +1,6 @@
 # 24. Ponytail Standard
 
-**Part V** · Owns: conditional classification, review-only pilot, metrics, authority boundaries, prohibited weakening, promotion criteria, removal criteria, first-party benchmark qualification.
+**Part V** · **Owns:** conditional classification, review-only pilot, metrics, authority boundaries, prohibited weakening, promotion criteria, removal criteria, first-party benchmark qualification.
 
 > Verified 2026-10-12 against github.com/DietrichGebert/ponytail (release v5.1.0) and ponytail.dev. Ponytail is a ruleset with skills, hooks, and agent plugins that encourages minimal code. Its published benchmark figures are first-party claims, not Nexora guarantees.
 
@@ -30,6 +30,24 @@ Ponytail may not be used to remove or weaken: requirements, tests, security cont
 ## 24.6 Promotion criteria
 
 Promotion beyond review-only (for example, rules active during implementation) requires a register update, recorded pilot metrics showing net benefit, and owner approval; it is a tooling change, not a governance change.
+
+### 24.6.1 Permission, state, and task authorization
+
+This tool obeys the three-way split defined in
+[chapter 20](20-developer-tooling-and-security.md#2021-permission-state-and-task-authorization-are-distinct):
+
+- **Permission** - whether this tool is permitted for the project at all,
+  recorded in `docs/governance/approved-tooling.md`;
+- **Lifecycle and configuration state** - whether it is installed, configured,
+  and enabled right now, recorded in
+  `docs/governance/tooling-adoption-register.md`;
+- **Task-level authorization** - whether this specific action is approved right
+  now, given by the Project Owner at the time of action.
+
+An enabled tool is not automatically authorized for every action. Destructive,
+privileged, production, publication, deployment, credential-bearing, and
+external-write actions always require explicit Project Owner authorization
+regardless of configuration state.
 
 ## 24.7 Removal
 

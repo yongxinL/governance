@@ -1,6 +1,6 @@
 # 23. codebase-memory-mcp Standard
 
-**Part V** · Owns: conditional adoption, triggers, local index, include and exclude paths, sensitive-data exclusions, freshness, commit and branch association, UI exposure, source verification, sharing, removal.
+**Part V** · **Owns:** conditional adoption, triggers, local index, include and exclude paths, sensitive-data exclusions, freshness, commit and branch association, UI exposure, source verification, sharing, removal.
 
 > Verified 2026-10-12 against github.com/DeusData/codebase-memory-mcp and PyPI release 0.11.0. Upstream performance figures are first-party claims (project benchmark and the authors' preprint) and are not Nexora guarantees.
 
@@ -38,6 +38,24 @@ Important conclusions (impact analysis, dead-code findings) are verified against
 ## 23.8 Sharing
 
 Indexes are not committed and not shared outside the owner's machine without approval.
+
+### 23.8.1 Permission, state, and task authorization
+
+This tool obeys the three-way split defined in
+[chapter 20](20-developer-tooling-and-security.md#2021-permission-state-and-task-authorization-are-distinct):
+
+- **Permission** - whether this tool is permitted for the project at all,
+  recorded in `docs/governance/approved-tooling.md`;
+- **Lifecycle and configuration state** - whether it is installed, configured,
+  and enabled right now, recorded in
+  `docs/governance/tooling-adoption-register.md`;
+- **Task-level authorization** - whether this specific action is approved right
+  now, given by the Project Owner at the time of action.
+
+An enabled tool is not automatically authorized for every action. Destructive,
+privileged, production, publication, deployment, credential-bearing, and
+external-write actions always require explicit Project Owner authorization
+regardless of configuration state.
 
 ## 23.9 Removal
 

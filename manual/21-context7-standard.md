@@ -1,6 +1,6 @@
 # 21. Context7 Standard
 
-**Part V** · Owns: Context7 purpose, approved use, current integration guidance, external query handling, query minimization, authentication, configuration scope, authority boundaries, removal.
+**Part V** · **Owns:** Context7 purpose, approved use, current integration guidance, external query handling, query minimization, authentication, configuration scope, authority boundaries, removal.
 
 > Verified 2026-10-12 against context7.com documentation and github.com/upstash/context7. Version: hosted service; no pinned version.
 
@@ -50,6 +50,24 @@ Do not use the vendor's automatic setup command (`ctx7 setup`) in governed proje
 ## 21.6 Authority boundaries
 
 Retrieved documentation is external information. It is not proof of project implementation and does not override specifications, ADRs, or the pinned tool version's actual behaviour.
+
+### 21.6.1 Permission, state, and task authorization
+
+This tool obeys the three-way split defined in
+[chapter 20](20-developer-tooling-and-security.md#2021-permission-state-and-task-authorization-are-distinct):
+
+- **Permission** - whether this tool is permitted for the project at all,
+  recorded in `docs/governance/approved-tooling.md`;
+- **Lifecycle and configuration state** - whether it is installed, configured,
+  and enabled right now, recorded in
+  `docs/governance/tooling-adoption-register.md`;
+- **Task-level authorization** - whether this specific action is approved right
+  now, given by the Project Owner at the time of action.
+
+An enabled tool is not automatically authorized for every action. Destructive,
+privileged, production, publication, deployment, credential-bearing, and
+external-write actions always require explicit Project Owner authorization
+regardless of configuration state.
 
 ## 21.7 Removal
 

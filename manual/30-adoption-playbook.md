@@ -1,8 +1,16 @@
 # 30. Adoption Playbook
 
-**Part VI** · Owns: new-project adoption, full scaffold copy, customization, environment configuration, Spec Kit initialization, constitution reconciliation, baseline commits, first specification, existing-project adoption, governance upgrades, adoption completion.
+**Part VI** · **Owns:** new-project adoption, full scaffold copy, customization, environment configuration, Spec Kit initialization, constitution reconciliation, baseline commits, first specification, existing-project adoption, governance upgrades, adoption completion.
 
 ## 30.1 New-project adoption
+
+**Stage 0 - Verify the package.** Confirm the release and its integrity before copying anything: verify the immutable tag or archive checksum, then verify every packaged file against `MANIFEST.json` ([chapter 27](27-generated-files-manifests-and-packaging.md)). Stop if any digest, size, or release identifier mismatches.
+
+The central governance repository location is a required input supplied by the
+Project Owner, recorded as `<GOVERNANCE_REPOSITORY_URL>` in project governance
+records. The released package deliberately ships no default governance
+repository URL, because that value is deployment-specific. Do not copy a manual
+into the project; reference the central release instead.
 
 **Stage 1 - Copy the scaffold.** Copy `project-template/` contents into the project root including hidden files:
 
@@ -31,7 +39,10 @@ docs(product): define product vision and requirements
 docs(spec): approve project constitution
 ```
 
-Optionally create an annotated tag such as `governance-adopted-v1.0.0` (example).
+Optionally create an annotated adoption tag using the version-neutral pattern
+`governance-adopted-vX.Y.Z`. For this release the pattern is
+`governance-adopted-v1.0.1`. An adoption tag is a project-local marker and is
+distinct from the central release tag.
 
 **Stage 9 - First governed change.** Specify, clarify, plan, checklist (optional), tasks, analyze, implement, optional Ponytail review (if registered), converge, release.
 
@@ -46,3 +57,36 @@ Follow [chapter 04](04-governance-versioning-and-exceptions.md#42-explicit-adopt
 ## 30.4 Adoption completion
 
 Run prompt [04](../prompts/04-governance-adoption-review.md). When the mandatory controls in [chapter 29](29-audit-conformance-and-maturity.md#292-mandatory-conformance-controls-level-1-baseline) are met, set the adoption state to `Adopted` (or `Adopted with Exceptions`) and commit.
+
+## 30.5 Agent-assisted adoption
+
+The released package may include
+`skills/nexora-governance-adopt/SKILL.md`. The skill may assist with package
+integrity verification, inspection, planning, scaffold application, validation,
+and upgrade impact analysis.
+
+The skill is optional and non-authoritative. It does not replace this playbook,
+`README.md`, `instructions/README.md`, `manual/`, the required prompts,
+`project-template/`, `MANIFEST.json`, native Spec Kit ownership, or Project Owner
+approval.
+
+The skill must:
+
+- read the authoritative governance sources rather than reconstructing policy
+  from model memory;
+- verify the selected package and its `MANIFEST.json` before applying anything;
+- accept project identity and `<GOVERNANCE_REPOSITORY_URL>` as explicit inputs;
+- distinguish new-project from existing-project adoption;
+- inspect and produce a plan before applying any change;
+- preserve hidden files when copying the scaffold;
+- stop at Project Owner gates and return owner decisions rather than resolving
+  them;
+- avoid installing, initializing, or enabling tools as a side effect;
+- avoid committing, pushing, merging, tagging, publishing, deploying, or
+  approving without explicit authorization.
+
+It must not embed target-project facts or a deployment-specific governance
+repository in reusable central content.
+
+When required inputs are missing, the skill stops and reports what is missing.
+It must not fall back to an assumed default source.

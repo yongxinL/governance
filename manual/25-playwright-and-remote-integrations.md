@@ -1,6 +1,6 @@
 # 25. Playwright and Remote Integrations
 
-**Part V** · Owns: Playwright MCP use cases, browser isolation, authentication, screenshots and traces, unsafe execution, Forgejo integration, remote writes, production access, infrastructure integrations, privileged tools.
+**Part V** · **Owns:** Playwright MCP use cases, browser isolation, authentication, screenshots and traces, unsafe execution, Forgejo integration, remote writes, production access, infrastructure integrations, privileged tools.
 
 > Verified 2026-10-12 against playwright.dev/mcp documentation. Pin a specific `@playwright/mcp` version; the vendor's examples use `@latest`, which is not acceptable in committed configuration.
 
