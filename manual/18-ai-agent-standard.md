@@ -1,6 +1,6 @@
 # 18. AI Agent Standard
 
-**Part V** · Owns: AI authority boundaries, `AGENTS.md` purpose and content, required reading, prohibited assumptions and actions, escalation, validation, completion authority, owner approval, the Spec Kit managed block.
+**Part V** · **Owns:** AI authority boundaries, `AGENTS.md` purpose and content, required reading, prohibited assumptions and actions, escalation, validation, completion authority, owner approval, the Spec Kit managed block.
 
 ## 18.1 Authority boundaries
 
@@ -41,6 +41,37 @@ Create competing specifications, plans, task lists, analysis, or completion reco
 
 Stop and report when: a specification is wrong, ambiguous, or conflicts with another authority; scope must expand; a security or data risk appears; a required tool or credential is missing; tests cannot be run; rollback is missing; or an instruction conflicts with governance.
 
-## 18.9 Validation and completion
+## 18.9 Write discipline
+
+Before any write, the agent states the scope it intends to change and reviews
+the current state of those paths. During the work:
+
+- review the working-tree state (`git status`) before and after;
+- check for whitespace and conflict-marker defects (`git diff --check`);
+- read the complete diff, not only the files expected to change;
+- report the validation that was actually run, and report validation that was
+  not run as `NOT_RUN` under
+  [chapter 13](13-testing-evidence-and-verification.md);
+- when work must be undone, revert or restore non-destructively. Do not use
+  destructive history operations to recover from a mistake, and never discard
+  uncommitted work that was not the agent's to discard.
+
+Recovery guidance must be safe to follow. "Delete the branch" is not recovery.
+
+## 18.10 Context and cost discipline
+
+Keep context deliberate. Read what the task needs, avoid re-reading unchanged
+files, and do not paste large artifacts into a conversation when a
+repository-relative reference is sufficient. A handoff or repository record
+outlives the context window; a conversation does not.
+
+## 18.11 Agent neutrality
+
+This standard describes behaviour, not a product. It applies to any approved
+agent harness, including OpenCode and Codex, and does not bind governance to one
+vendor. Where an agent-specific detail matters, it belongs in
+`AGENTS.md` or the relevant tool chapter, not in the governance model.
+
+## 18.12 Validation and completion
 
 Run the project's test, build, and lint commands as recorded in `AGENTS.md`. Report what was run and the result. Completion requires native convergence and owner acceptance; an agent reports readiness, it does not declare completion.

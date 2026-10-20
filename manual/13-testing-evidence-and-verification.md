@@ -1,6 +1,6 @@
 # 13. Testing, Evidence, and Verification
 
-**Part III** · Owns: evidence classes, acceptance-criteria mapping, functional and non-functional verification, automated and manual testing, summaries, external, temporary, and sensitive evidence, failed verification, sufficiency, risk proportionality.
+**Part III** · **Owns:** evidence classes, acceptance-criteria mapping, functional and non-functional verification, automated and manual testing, summaries, external, temporary, and sensitive evidence, failed verification, sufficiency, risk proportionality.
 
 ## 13.1 Evidence classes
 
@@ -47,3 +47,56 @@ Evidence is sufficient when an informed reviewer could reasonably conclude every
 ## 13.9 Templates and prompts
 
 [`test-plan-template.md`](../project-template/docs/templates/test-plan-template.md), [`verification-summary-template.md`](../project-template/docs/templates/verification-summary-template.md), prompt [16](../prompts/16-test-and-evidence-review.md).
+
+### 13.10 Verification result vocabulary
+
+Use these summary results:
+
+- `Passed`: all required verification passed.
+- `Passed with approved deviations`: required verification passed except for
+  deviations explicitly accepted by the Project Owner.
+- `Failed`: a check ran and did not satisfy its requirement.
+- `Incomplete`: required evidence is missing or a required check was not run.
+- `Blocked`: verification cannot proceed because a prerequisite or safety
+  condition is unresolved.
+
+A check that was not run is recorded as `NOT_RUN`, never as passed or failed.
+
+### 13.11 Canonical check outcomes and their mapping
+
+Every individual check records exactly one canonical outcome. These are the
+values used by the prompts, release gates, and validation output:
+
+| Outcome | Meaning |
+|---|---|
+| `PASS` | The check ran and satisfied its requirement. |
+| `FAIL` | The check ran and did not satisfy its requirement. |
+| `BLOCKED` | The check could not run because a prerequisite or safety condition was unresolved. |
+| `NOT_RUN` | The check was not executed. No result is claimed. |
+| `NOT_APPLICABLE` | The check does not apply to this change, with a recorded reason. |
+
+The summary results in 13.10 are human-facing and map onto canonical outcomes as
+follows. They are not a second, competing vocabulary.
+
+| Summary result | Canonical outcomes that may compose it |
+|---|---|
+| `Passed` | All required checks `PASS`; no required check `NOT_RUN`, `FAIL`, or `BLOCKED` |
+| `Passed with approved deviations` | All required checks `PASS` except deviations the Project Owner has explicitly accepted, each recorded with approver, mode, and date |
+| `Failed` | At least one required check `FAIL` |
+| `Incomplete` | At least one required check `NOT_RUN` or `NOT_APPLICABLE` without a recorded reason |
+| `Blocked` | At least one required check `BLOCKED` |
+
+Rules:
+
+- A check outcome is never inferred from a summary result, and a summary result
+  is never inferred from a single check outcome.
+- "Passed with approved deviations" is a claim about an approval that actually
+  occurred. Without a recorded Project Owner approval it must be reported as
+  `Failed` or `Incomplete`, never as passed with deviations.
+- Reporting completion must distinguish validation performed from validation not
+  performed. If any required check was not run, the work is not fully verified,
+  whatever else succeeded.
+- Evidence is scoped to a specific version and commit. Evidence from a
+  different revision does not verify the current one.
+- `BLOCKED` is never reported as `PASS`, and an unavailable prerequisite is
+  never silently treated as satisfied.

@@ -1,6 +1,6 @@
 # 17. Indexing, Traceability, and Source of Truth
 
-**Part IV** · Owns: distributed indexes, source-of-truth register, index authority, linked-artifact authority, forward and backward traceability, native Spec Kit traceability, optional matrices, stable links, orphan classification.
+**Part IV** · **Owns:** distributed indexes, source-of-truth register, index authority, linked-artifact authority, forward and backward traceability, native Spec Kit traceability, optional matrices, stable links, orphan classification.
 
 ## 17.1 Distributed indexes
 
@@ -30,6 +30,26 @@ If an index and an artifact disagree on status, treat it as a finding and correc
 
 `docs/governance/source-of-truth-register.md` maps each information category to one authoritative location and names supporting locations. It is consulted before creating any document and updated when a category's location changes.
 
+Categories that require distinct authority include, at minimum:
+
+| Information category | Authoritative location | Notes |
+|---|---|---|
+| Product vision | `docs/product/vision.md` | Distinct from requirements; owns purpose, users, goals, non-goals |
+| Product requirements | `docs/product/requirements.md` | Distinct from vision; owns product-level outcomes and constraints |
+| Tool permission | `docs/governance/approved-tooling.md` | Whether a tool is permitted at all |
+| Tool adoption and configuration state | `docs/governance/tooling-adoption-register.md` | Actual installed, configured, and enabled state |
+| Authorization for a specific action | The Project Owner's instruction at the time of action | Not implied by permission or by an enabled tool |
+
+Product vision and product requirements are separate information categories with
+separate authoritative files. Merging them, or recording either only inside a
+specification, breaks the one-source-of-truth rule.
+
+The tooling rows deliberately separate permission, state, and task-level
+authorization. A tool being permitted is not the same as it being enabled, and
+being enabled is not the same as being authorized for a particular destructive,
+privileged, production, publication, deployment, or external-write action. See
+[chapter 20](20-developer-tooling-and-security.md).
+
 ## 17.5 Traceability
 
 - **Forward:** product requirement -> SPEC -> FR/NFR/AC -> native plan -> native tasks -> tests and evidence -> release record.
@@ -42,7 +62,7 @@ No universal traceability matrix is required. Introduce one (in `docs/testing/`)
 
 ## 17.7 Links
 
-Use repository-relative links inside a project. Reference central governance by repository URL and immutable tag, never by default branch.
+Use repository-relative links inside a project. Reference central governance by its repository location and immutable tag, never by default branch. The central repository location is a deployment-specific input supplied by the Project Owner, commonly recorded as `CENTRAL-GOVERNANCE-REFERENCE.md`; the released package intentionally ships no default governance repository URL.
 
 ## 17.8 Orphan classification
 

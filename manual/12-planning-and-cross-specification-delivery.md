@@ -1,6 +1,6 @@
 # 12. Planning and Cross-Specification Delivery
 
-**Part II** · Owns: native feature planning, plan boundaries, cross-specification plan triggers, multi-release and migration coordination, infrastructure transitions, no competing plan hierarchy.
+**Part II** · **Owns:** native feature planning, plan boundaries, cross-specification plan triggers, multi-release and migration coordination, infrastructure transitions, no competing plan hierarchy.
 
 ## 12.1 Native feature planning
 
@@ -27,6 +27,23 @@ Path: `docs/architecture/delivery-plan-<kebab-title>.md`, indexed in `docs/archi
 ## 12.4 Content and limits
 
 A delivery plan coordinates: objective, participating specifications and releases, dependency order, milestones, migration and rollback windows, risks, and owner checkpoints. It never contains feature tasks or restates requirements; each participating feature keeps its native plan and tasks.
+
+### 12.4.1 What a delivery plan must never become
+
+A cross-specification delivery plan coordinates work. It must not:
+
+- replace or override a native feature plan;
+- restate, reword, or duplicate feature requirements;
+- contain a competing feature task list;
+- become a second implementation authority;
+- introduce scope that no participating specification owns.
+
+Each participating feature retains its own native plan and tasks under
+`specs/`. If the delivery plan and a native plan disagree, the native plan governs
+the feature and the discrepancy is a finding to resolve, not a silent override.
+
+Apply proportionality: one feature does not need a delivery plan. Coordination
+value must exist before the artifact is created.
 
 ## 12.5 No competing plan hierarchy
 

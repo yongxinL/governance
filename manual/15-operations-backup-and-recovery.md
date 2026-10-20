@@ -1,6 +1,6 @@
 # 15. Operations, Backup, and Recovery
 
-**Part III** · Owns: deployment, configuration, monitoring, alerting, troubleshooting, runbooks, backup, restore, recovery, disaster recovery, operational exercises, operational evidence.
+**Part III** · **Owns:** deployment, configuration, monitoring, alerting, troubleshooting, runbooks, backup, restore, recovery, disaster recovery, operational exercises, operational evidence.
 
 ## 15.1 Operations overview
 
@@ -29,3 +29,22 @@ Define recovery objectives where they matter (acceptable data loss and downtime)
 ## 15.7 Exercises and evidence
 
 Exercise restore and recovery procedures on a trigger basis: after initial setup, after material infrastructure change, after incidents, and before high-risk releases. Commit exercise summaries; reference raw logs externally. Failures produce a lesson and runbook update.
+
+### 15.7.1 Operational evidence honesty
+
+- Never claim that a backup, restore, rollback, or recovery exercise was performed
+  when it was not. An unperformed exercise is `NOT_RUN` under
+  [chapter 13](13-testing-evidence-and-verification.md), not a passed check.
+- Do not invent recovery objectives, recovery times, recovery points, retention
+  periods, or monitoring thresholds. Record the real approved values, or record
+  that the value is still to be decided.
+- Record the date, scope, environment, and operator of each exercise so a later
+  reader can tell whether it covers the current system.
+- A runbook is operational guidance. It does not become design authority or
+  product authority, and a procedure recorded in a runbook does not override an
+  accepted ADR or an approved requirement. Where they conflict, treat it as a
+  finding and resolve it through [chapter 09](09-adr-standard.md) or
+  [chapter 10](10-rfc-standard.md).
+- Access and credential boundaries follow
+  [chapter 20](20-developer-tooling-and-security.md). A runbook names the
+  credential and its store; it never contains the secret.

@@ -1,6 +1,6 @@
 # 11. Investigations and Lessons
 
-**Part II** · Owns: investigation triggers, evidence and experiments, findings and limitations, non-decisional nature, lesson lifecycle, incorporation, `INV-NNN` and `LES-NNN`.
+**Part II** · **Owns:** investigation triggers, evidence and experiments, findings and limitations, non-decisional nature, lesson lifecycle, incorporation, `INV-NNN` and `LES-NNN`.
 
 ## 11.1 Investigation triggers
 

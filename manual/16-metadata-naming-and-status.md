@@ -1,6 +1,6 @@
 # 16. Metadata, Naming, and Status
 
-**Part IV** · Owns: minimal metadata, identifiers, number allocation, dates, filenames, owner role, controlled statuses, status transitions, historical identifiers.
+**Part IV** · **Owns:** minimal metadata, identifiers, number allocation, dates, filenames, owner role, controlled statuses, status transitions, historical identifiers.
 
 ## 16.1 Minimal metadata
 
@@ -33,6 +33,42 @@ Native Spec Kit artifacts keep their native structure; record `SPEC-NNN`, status
 | Lesson | `LES-NNN` | `LES-002` |
 
 Examples in this manual are illustrative and do not refer to real artifacts. Do not create identifiers for document types without a governance purpose.
+
+### 16.2.1 Project-local exception labels
+
+`EXC-NNN` is a **project-local** register label used in each project's
+`docs/governance/documentation-exceptions.md`. It is not one of the centrally
+allocated identifier families in 16.2, and the central package does not allocate,
+reserve, or audit exception numbers across projects. Allocation, non-reuse, and
+retention of `EXC-NNN` are owned by the project's exception register under
+[chapter 04](04-governance-versioning-and-exceptions.md#43-exception-types).
+
+This distinction is recorded deliberately. Earlier drafts of this chapter listed
+`EXC-NNN` alongside the centrally allocated families while defining no central
+allocation rule for it, which implied a central obligation that no other chapter
+established. Removing it from 16.2 resolves that inconsistency without changing
+existing project behaviour.
+
+### 16.2.2 Decision records: D1-D20 and DEC-001 through DEC-020
+
+Two decision-naming conventions exist and must not be merged or renumbered:
+
+- `D1` through `D20` are the labels of the approved v1.0 governance decisions.
+  They are historical references, not an allocatable identifier family.
+- `DEC-001` through `DEC-020` are maintenance decision records under
+  `maintenance/decisions/`. Per `maintenance/README.md`, they correspond to the
+  approved v1.0 decisions D1-D20.
+
+`DEC-NNN` is maintained by the central repository, not by adopting projects.
+Projects do not allocate `DEC-NNN` values and must not copy central decision
+records into `docs/`. Central decisions are repository-only and are outside the
+released package.
+
+**OWNER_DECISION:** the `maintenance/decisions/` directory does not yet exist in
+this repository. Whether it should be created, and whether `D1`-`D20` remain
+only as historical aliases or are formally superseded by `DEC-001`-`DEC-020`, is
+unresolved. This chapter preserves both conventions and asserts no supersession.
+Resolving it changes no adopting project's obligations either way.
 
 ## 16.3 Allocation
 

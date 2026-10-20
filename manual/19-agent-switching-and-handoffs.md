@@ -1,6 +1,6 @@
 # 19. Agent Switching and Handoffs
 
-**Part V** · Owns: primary agent, secondary-agent use, one active integration, switching, integration changes, repository-based handoff, temporary work handoff, incomplete work, conversation-history limitations.
+**Part V** · **Owns:** primary agent, secondary-agent use, one active integration, switching, integration changes, repository-based handoff, temporary work handoff, incomplete work, conversation-history limitations.
 
 ## 19.1 Primary agent
 
@@ -30,6 +30,21 @@ The repository is the handoff: committed artifacts, task state in native tasks, 
 ## 19.5 Temporary work handoff
 
 For incomplete work, create a handoff from [`temporary-work-handoff-template.md`](../project-template/docs/templates/temporary-work-handoff-template.md) on the working branch (suggested path: `HANDOFF.md` at the root of the branch). It records branch, commit, specification, task state, completed and remaining work, tests, failures, uncommitted files, deviations, decisions needed, and next action. It never replaces authoritative artifacts, contains no transcripts or secrets, and is deleted before merge once its content has been resolved into authoritative artifacts.
+
+### 19.5.1 Handoff kinds must not be confused
+
+| Kind | Duration | Authority |
+|---|---|---|
+| Temporary secondary-agent use | One task or session | None; the primary agent retains authority |
+| Permanent primary-agent change | Indefinite | Recorded in `governance-adoption.md` as a governed change |
+| Integration or configuration change | Indefinite | Recorded in `governance-adoption.md` and tooling records |
+| Temporary work-state record (`HANDOFF.md`) | Until work resolves | None; working state only |
+| Durable project authority | Indefinite | Committed governed artifacts and indexes |
+
+A `HANDOFF.md` is a working record, not a source of truth. If it would still be
+needed after the work lands, its content belongs in a governed artifact instead.
+Review it before merge and either delete it or archive it with a recorded reason;
+never leave it as a permanent duplicate of committed state.
 
 ## 19.6 Conversation-history limitations
 
