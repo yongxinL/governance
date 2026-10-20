@@ -7,11 +7,13 @@ Maps each information category to exactly one authoritative location. Consult be
 | Governance rules | Central Nexora Governance at the adopted tag | `CENTRAL-GOVERNANCE-REFERENCE.md` | Never copied locally |
 | Governance adoption | `docs/governance/governance-adoption.md` | | |
 | Exceptions | `docs/governance/documentation-exceptions.md` | Affected artifacts for one-time deviations | |
-| Permitted tools | `docs/governance/approved-tooling.md` | | |
-| Enabled tools | `docs/governance/tooling-adoption-register.md` | Agent configuration files | |
+| Tool permission | `docs/governance/approved-tooling.md` | | Whether the tool is permitted at all |
+| Tool adoption and configuration state | `docs/governance/tooling-adoption-register.md` | Agent configuration files | Planned, Pilot, Enabled, Disabled, Removed |
+| Task-level authorization for a tool action | Project Owner instruction at the time of action | Recorded approval evidence | Not implied by permission or by an enabled state |
 | Agent operating rules | `AGENTS.md` | Nested `AGENTS.md` | Operational only |
 | Project principles | Native Spec Kit constitution (under `.specify/`) | | |
-| Product intent | `docs/product/vision.md`, `docs/product/requirements.md` | | |
+| Product vision | `docs/product/vision.md` | | Purpose, users, goals, non-goals |
+| Product requirements | `docs/product/requirements.md` | | Product-level outcomes and constraints; distinct from vision |
 | Feature behaviour and acceptance criteria | Native specifications under `specs/` | `specs/README.md` index | |
 | Feature plans | Native plans under `specs/` | | |
 | Tasks and completion state | Native tasks under `specs/` | External tracker mirrors (non-authoritative) | |

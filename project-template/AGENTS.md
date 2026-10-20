@@ -47,7 +47,18 @@ The specification is wrong, ambiguous, or conflicts with other authority; scope 
 - Build: `<PROJECT_BUILD_COMMAND>`
 - Lint: `<PROJECT_LINT_COMMAND>`
 
-Report which commands ran and their results. Never claim a check passed that was not run.
+Record each check with one canonical outcome: `PASS`, `FAIL`, `BLOCKED`,
+`NOT_RUN`, or `NOT_APPLICABLE`.
+
+- Report which commands ran, their results, and the evidence paths reviewed.
+- A check that was not executed is `NOT_RUN`. It is never `PASS` and never `FAIL`.
+- An unavailable prerequisite is `BLOCKED`; record the cause and what is needed.
+- `NOT_APPLICABLE` requires a stated reason.
+- Never claim a check passed that was not run, and never report a file's presence
+  as evidence that its contents were validated.
+
+Where a command above is still an unresolved marker, tests are `NOT_RUN` until the
+Project Owner supplies it. Do not silently skip validation.
 
 ## Completion rules
 

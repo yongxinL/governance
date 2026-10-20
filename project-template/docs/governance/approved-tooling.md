@@ -2,7 +2,16 @@
 
 Defines which tools are **permitted** in this project. Whether a tool is actually configured is recorded in [tooling-adoption-register.md](tooling-adoption-register.md). Permission does not mean a tool is enabled.
 
-Baseline: Nexora Governance v1.0 default tool profile (central chapter 20), verified 2026-10-12.
+Baseline: Nexora Governance v1.0.1 default tool profile (central chapter 20), tool
+guidance verified 2026-10-12. The tool verification date is unchanged from the
+previous release; it is not re-verified by adopting this package version.
+
+This record owns **permission** only. It does not record whether a tool is
+installed, configured, or enabled (see
+[tooling-adoption-register.md](tooling-adoption-register.md)), and it does not
+authorize any particular action. An enabled tool still requires explicit Project
+Owner authorization for destructive, privileged, production, publication,
+deployment, credential-bearing, or external-write actions.
 
 | Tool | Permission | Conditions |
 |---|---|---|
@@ -22,4 +31,18 @@ Baseline: Nexora Governance v1.0 default tool profile (central chapter 20), veri
 | Forgejo integration | Disabled or read-only initially | Dedicated least-privilege token; writes need owner authorization |
 | Deployment, infrastructure, privileged tools | Disabled initially | RFC or tool adoption review |
 
-Project-specific restrictions may make this list stricter. Loosening it requires a tool adoption review and, where it departs from the central profile, an exception.
+## Permission record fields
+
+Each tool permission records: tool or integration, classification, permission
+status, permission basis, approving authority, approval date or `Pending`,
+constraints, review trigger, and removal or prohibition state.
+
+This scaffold does not pre-populate approval evidence. A permission listed here
+is the central default profile, not a recorded project approval. Record the
+approving authority and date only when the Project Owner actually approves.
+
+## Scope of permission
+
+Project-specific restrictions may make this list stricter. Loosening it requires
+a tool adoption review and, where it departs from the central profile, an
+exception.

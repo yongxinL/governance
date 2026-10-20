@@ -2,12 +2,25 @@
 
 Records which tools are **actually configured or enabled** in this project. Each conditional tool requires an entry before use. Use the [tooling adoption entry template](../templates/tooling-adoption-entry-template.md).
 
+This register owns **lifecycle and configuration state** only. It does not grant
+permission, which is recorded separately in
+[approved-tooling.md](approved-tooling.md), and it does not authorize any
+particular action. Task-level authorization is the Project Owner's decision at
+the time of action; an entry marked `Enabled` never implies blanket
+authorization, and always requires explicit owner authorization for destructive,
+privileged, production, publication, deployment, credential-bearing, or
+external-write work.
+
+The scaffold ships lifecycle states as markers. Do not record a tool as
+`Enabled`, or record an approval, verification, or installation result that did
+not actually occur.
+
 ## Summary
 
 | Tool | Version | Scope | State | Entry |
 |---|---|---|---|---|
 | GitHub Spec Kit | `<SPEC_KIT_VERSION>` | Project | Planned | TA-001 |
-| Primary agent (`<PRIMARY_AGENT>`) | `<OPENCODE_VERSION>` or installed Codex version | User install, project config | Planned | TA-002 |
+| Primary agent (`<PRIMARY_AGENT>`) | `<PRIMARY_AGENT_VERSION>` or installed Codex version | User install, project config | Planned | TA-002 |
 
 States: Planned, Pilot, Enabled, Disabled, Removed. Removed entries remain listed.
 

@@ -1,6 +1,7 @@
 # Adoption Instructions
 
-Project-local adoption checklist for Nexora Governance v1.0 (`v1.0.0`). The complete procedure is owned by central manual chapter 30; this file sequences it for this repository.
+Project-local adoption checklist for Nexora Governance v1.0.1 (planned tag
+`v1.0.1`, which does not exist yet). The complete procedure is owned by central manual chapter 30; this file sequences it for this repository.
 
 ## 1. Install the full scaffold
 
@@ -14,12 +15,12 @@ Replace customization markers:
 |---|---|---|
 | `<PROJECT_NAME>` | Project name | `AGENTS.md`, `governance-adoption.md` |
 | `<PROJECT_OWNER>` | Named Project Owner | `governance-adoption.md` only |
-| `<CENTRAL_GOVERNANCE_REPOSITORY>` | URL of the central governance repository | `CENTRAL-GOVERNANCE-REFERENCE.md`, `governance-adoption.md` |
+| `<GOVERNANCE_REPOSITORY_URL>` | URL of the central governance repository | `CENTRAL-GOVERNANCE-REFERENCE.md`, `governance-adoption.md` |
 | `<ADOPTION_DATE>` | `YYYY-MM-DD` | `governance-adoption.md` |
 | `<PRIMARY_AGENT>` | `opencode` or `codex` | `governance-adoption.md` |
 | `<SPEC_KIT_INTEGRATION_KEY>` | Spec Kit integration key matching the primary agent | `governance-adoption.md` |
 | `<SPEC_KIT_VERSION>` | Pinned Spec Kit release tag | `tooling-adoption-register.md` |
-| `<OPENCODE_VERSION>` | Installed OpenCode version (v2 format) | `tooling-adoption-register.md` |
+| `<PRIMARY_AGENT_VERSION>` | Installed OpenCode version (v2 format) | `tooling-adoption-register.md` |
 | `<CONTEXT7_AUTH_MODE>` | `api-key` or `oauth` | `tooling-adoption-register.md` |
 | `<PLAYWRIGHT_MCP_VERSION>` | Pinned Playwright MCP version | Configuration, register |
 | `<SECRET_STORE>` | Name of the secret store or environment mechanism | `source-of-truth-register.md` |
@@ -29,7 +30,15 @@ If a value is not yet known, leave the marker and record why in the adoption rec
 
 ## 3. Central governance reference
 
-Record the central repository, version `1.0.0`, and immutable tag `v1.0.0`. Never reference the central default branch.
+Record the governance repository location supplied by the Project Owner as
+`<GOVERNANCE_REPOSITORY_URL>`, the adopted version, and the verified immutable
+release tag. Never reference the central default branch.
+
+While the package is in preparation its planned tag does not exist. Record an
+adopted tag only after verifying the real release. The `1.0.0` release was
+declared Released on 2026-10-12 at baseline `d00dcab5f70c083a37d612e48eacb67e38aa272e`,
+but no `v1.0.0` tag was found locally or on origin, so it must not be recorded as
+an immutable adopted tag.
 
 ## 4. Solo-owner mode
 

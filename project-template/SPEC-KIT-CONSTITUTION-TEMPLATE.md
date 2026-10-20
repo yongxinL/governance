@@ -1,4 +1,4 @@
-# Spec Kit Constitution Reconciliation Template (Nexora Governance v1.0)
+# Spec Kit Constitution Reconciliation Template (Nexora Governance v1.0.1)
 
 > **Temporary reconciliation source - not the active constitution.** After Spec Kit initialization, provide these principles to the native constitution command, keep only what is true for or explicitly adopted by this project, have the Project Owner approve the native constitution, then delete this file (unless a documented reason to retain it is recorded in `docs/governance/documentation-exceptions.md`).
 

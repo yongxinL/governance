@@ -1,35 +1,46 @@
-# Governance
+# Project Governance
 
-## Purpose
-Project-level governance records: which Nexora release is adopted, where truth lives, approved exceptions, and which tools are permitted and enabled.
+This directory contains project-specific governance records. It does not copy
+the central governance manual.
 
-## Authority
-These records are authoritative for project governance configuration. They do not restate the central manual; they reference it at the adopted tag.
-
-## Contents
-
-| Record | Authoritative for |
+| Record | Authority |
 |---|---|
-| [governance-adoption.md](governance-adoption.md) | Adopted release, owner, mode, agent, adoption state |
-| [source-of-truth-register.md](source-of-truth-register.md) | Information category to location mapping |
-| [documentation-exceptions.md](documentation-exceptions.md) | Temporary and standing exceptions |
-| [approved-tooling.md](approved-tooling.md) | Tools permitted in this project |
-| [tooling-adoption-register.md](tooling-adoption-register.md) | Tools actually configured or enabled |
+| `governance-adoption.md` | Adopted release, owner, mode, state, primary agent, and active integration |
+| `source-of-truth-register.md` | One authoritative location per information category |
+| `approved-tooling.md` | Tools permitted for project use |
+| `tooling-adoption-register.md` | Actual tool lifecycle and configuration state |
+| `documentation-exceptions.md` | Temporary and standing project exceptions |
+
+Material changes require Project Owner review. NX-1 through NX-6 cannot be
+waived by ordinary exceptions.
+
+## Relationship to the central release
+
+These records specialize the adopted central release. They must not weaken,
+override, or contradict it. Where a record and the central manual appear to
+disagree, the central manual governs and the discrepancy is a finding to resolve.
 
 ## Artifact triggers
-Updated at adoption, at governance upgrades, on exceptions, on tool adoption or removal, and on ownership or agent changes.
 
-## Naming and identifiers
-Fixed filenames; no identifiers. Exceptions use local `EXC-NNN` labels within the exceptions record.
+| Record | Update trigger |
+|---|---|
+| `governance-adoption.md` | Initial adoption, governance upgrade, owner or mode change, primary-agent or integration change, adoption-state transition |
+| `source-of-truth-register.md` | A category's authoritative location changes, or a new governed category appears |
+| `approved-tooling.md` | A tool permission is granted, restricted, or prohibited; on any review trigger |
+| `tooling-adoption-register.md` | A tool is planned, piloted, enabled, disabled, or removed |
+| `documentation-exceptions.md` | An exception is raised, reviewed, resolved, or withdrawn |
 
-## Status expectations
-`governance-adoption.md` carries the adoption state (Not Adopted, Adoption in Progress, Adopted with Exceptions, Adopted, Retired).
+## Index fields
 
-## Index-entry requirements
-This index lists the five records above; no other files belong here.
+This index records the governed records in this area. Each record carries its own
+metadata: state, owner, dates, and its own authority statement.
 
-## Relationship to other artifacts
-Referenced by `AGENTS.md`, `CENTRAL-GOVERNANCE-REFERENCE.md`, and every area index.
+## Truthful empty state
 
-## Current scaffold state
-The five records are present as customizable scaffolds until adoption customization is complete.
+Before adoption customization is complete, these files are scaffolds containing
+unresolved markers. That is the truthful state and is not a defect. The presence
+of these files does not mean the project has adopted governance; only a recorded
+Project Owner approval in `governance-adoption.md` does.
+
+No exception has been recorded until one is actually written and approved. An
+empty exception register is a correct empty state, not a missing artifact.
