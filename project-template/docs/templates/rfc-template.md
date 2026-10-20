@@ -30,7 +30,28 @@
 ## 13. Success criteria (Mandatory)
 ## 14. Open questions (Optional)
 
-## 15. Outcome (Mandatory at decision)
+## 15. Recommendation (Mandatory)
+
+*The reviewer's recommendation. A recommendation is not a decision.*
+
+| Field | Value |
+|---|---|
+| Recommended outcome | Accept / Reject / Defer |
+| Rationale | |
+| Conditions attached | |
+
+## 16. Evidence and unknowns (Mandatory)
+
+*What is known, what is assumed, and what remains unknown. Unknowns are listed
+explicitly rather than resolved by assumption.*
+
+## 17. Boundaries
+
+An RFC evaluates a proposal. It does not become a duplicate specification, plan,
+or task list, and it never approves itself: only the Project Owner records an
+outcome. An accepted RFC may later produce one or more ADRs.
+
+## 18. Outcome (Mandatory at decision)
 
 | Field | Value |
 |---|---|

@@ -5,11 +5,13 @@
 | Field | Value |
 |---|---|
 | Created | YYYY-MM-DDThh:mm+hh:mm |
+| Handoff type | Temporary secondary agent / permanent primary-agent or integration change |
 | From agent | |
 | To agent | |
 | Branch | |
 | Commit | |
 | Specification | SPEC-NNN |
+| Native task state | |
 
 ## 1. Task state (Mandatory)
 *Reference native tasks by ID; do not copy the task list.*
@@ -23,3 +25,18 @@
 ## 8. Decisions needed from the Project Owner (Mandatory; "none" if none)
 ## 9. Integration-generated changes to review (Optional)
 ## 10. Next action (Mandatory)
+
+## 11. Review and closure (Mandatory)
+
+*How this temporary record is retired. A `HANDOFF.md` is working state, never a
+source of truth.*
+
+| Field | Value |
+|---|---|
+| Content moved to authoritative artifacts | |
+| Reviewed by | |
+| Delete or archive after merge | Pending |
+
+If this handoff would still be needed after the work lands, its content belongs
+in a committed governed artifact instead. Do not merge a temporary handoff as a
+permanent duplicate of committed state.

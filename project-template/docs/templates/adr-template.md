@@ -18,6 +18,10 @@
 ## Context (Mandatory)
 *The forces at play: requirements, constraints, current state, and why a decision is needed now.*
 
+## Decision drivers (Mandatory)
+*The forces that made a decision necessary: constraints, deadlines, risk,
+compatibility, cost, or prior commitments. Drivers are stated before options.*
+
 ## Decision (Mandatory)
 *The decision in one or two sentences, stated actively ("We will ...").*
 
@@ -40,4 +44,21 @@
 *Risks introduced and their mitigations.*
 
 ## Validation (Mandatory)
+*How this decision will be confirmed in practice. Do not claim validation has
+occurred unless it has; an unperformed check is `NOT_RUN`.*
+
+## Evidence and links (Mandatory where any)
+*Specification baselines, incidents, measurements, or prior ADRs that constrain or
+inform this decision.*
+
+## Boundaries
+
+One durable decision per ADR. An ADR does not contain requirements, a proposal
+still under evaluation, or an operational procedure; those belong to
+specifications, RFCs, and runbooks.
+
+Project ADR identifiers are unrelated to the central governance historical
+`D1`-`D20` decision labels and to central `DEC-NNN` maintenance records. Never
+renumber an existing ADR: a changed decision requires a new ADR that supersedes
+the old one, and both keep their identifiers.
 *How we will know the decision works in practice, and when to revisit it.*

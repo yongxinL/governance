@@ -30,3 +30,10 @@ Native feature plans in `specs/` are not indexed here. Template: [../templates/c
 
 ## Current scaffold state
 Index only; no overview or delivery plans exist yet.
+
+## Truthful empty state
+
+A project with no durable decisions yet has an empty ADR index and no delivery
+plan. That is a truthful state. Do not create ADRs to make the area look
+complete, and do not create a cross-specification delivery plan when one native
+feature plan is sufficient.

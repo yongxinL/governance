@@ -38,5 +38,19 @@
 ## 9. Time horizon (Optional)
 *The period this vision is expected to hold.*
 
-## 10. Related artifacts
+## 10. Opportunity (Optional)
+*The addressable opportunity and why now. Keep this at product level; do not
+describe architecture, technology choices, or implementation.*
+
+## 11. Unresolved owner decisions (Mandatory)
+*Questions only the Project Owner can answer. List them explicitly rather than
+assuming an answer. An unresolved question recorded here is a correct state.*
+
+## 12. Related artifacts
 - Product requirements: `requirements.md`
+
+## Boundaries
+
+This document is product intent. It must not contain technical architecture,
+implementation plans, task lists, or feature-level acceptance criteria. Those
+belong to ADRs, native plans, and native specifications.

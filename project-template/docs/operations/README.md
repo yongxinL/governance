@@ -26,3 +26,10 @@ Release records reference deployment and rollback runbooks.
 
 ## Current scaffold state
 No project artifacts have yet been created in this area.
+
+## Truthful empty state
+
+A project with no deployment, monitoring, or runbooks yet records that here
+plainly. Do not invent environments, thresholds, retention periods, or recovery
+objectives, and do not create placeholder runbooks. Undefined operational
+properties stay undefined until the Project Owner decides them.

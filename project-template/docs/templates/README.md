@@ -1,40 +1,66 @@
-# Templates
+# Documentation Templates
 
 ## Purpose
-Non-authoritative starting points for governed artifacts. Templates are never authority; authority arises only in artifacts created from them and approved.
+
+This directory holds the non-authoritative starting points used to create
+governed project artifacts.
 
 ## Authority
-Owning chapter: central manual 16 (metadata) and the chapter that owns each artifact type.
 
-## Artifact triggers
-Use a template only when the artifact's trigger applies. Copy it to the canonical location, rename it, and allocate the identifier in the area index.
+No template is authoritative. A template is never evidence that a decision,
+approval, verification, or release occurred. Authority belongs to the copied
+artifact in its canonical location, and only once the Project Owner has approved
+what it records.
 
-## Naming and identifiers
-Template files end in `-template.md`. Target names are given in each template.
+Templates in this directory are non-authoritative starting points. Copy the
+applicable template to its canonical location, allocate any required identifier
+in the owning index, replace guidance text, and obtain the required approval.
 
-## Status expectations
-Each template starts at the initial status for its type; templates never claim approval or completion.
+Do not create an artifact solely to populate the scaffold. Apply the trigger and
+proportionality rules in the central manual.
+
+Copying a template does not grant approval and does not create a record of a
+decision, verification, or result. Every copied template starts unresolved: fill
+approval fields only from a real Project Owner decision, and record evidence only
+for validation that actually ran.
+
+The two product templates live in `docs/product/` because their canonical targets
+are in that area. All other templates live in this directory.
 
 ## Index
 
-| Template | Creates | Target location | Owning chapter |
-|---|---|---|---|
-| [adr-template.md](adr-template.md) | ADR | `docs/architecture/adr/` | 09 |
-| [rfc-template.md](rfc-template.md) | RFC | `docs/rfc/` | 10 |
-| [investigation-template.md](investigation-template.md) | Investigation | `docs/investigations/` | 11 |
-| [cross-specification-delivery-plan-template.md](cross-specification-delivery-plan-template.md) | Delivery plan | `docs/architecture/` | 12 |
-| [test-plan-template.md](test-plan-template.md) | Test plan | `docs/testing/` | 13 |
-| [verification-summary-template.md](verification-summary-template.md) | Verification summary | Native feature directory or `docs/testing/` | 13 |
-| [runbook-template.md](runbook-template.md) | Runbook | `docs/operations/runbooks/` | 15 |
-| [release-template.md](release-template.md) | Release record | `docs/releases/` | 14 |
-| [lesson-learned-template.md](lesson-learned-template.md) | Lesson | `docs/lessons/` | 11 |
-| [tooling-adoption-entry-template.md](tooling-adoption-entry-template.md) | Register entry | `docs/governance/tooling-adoption-register.md` | 20 |
-| [temporary-work-handoff-template.md](temporary-work-handoff-template.md) | Temporary handoff | Working branch root | 19 |
+| Template | Canonical target | Resulting artifact |
+|---|---|---|
+| [../product/vision-template.md](../product/vision-template.md) | `docs/product/vision.md` | Authoritative |
+| [../product/requirements-template.md](../product/requirements-template.md) | `docs/product/requirements.md` | Authoritative |
+| [adr-template.md](adr-template.md) | `docs/architecture/adr/ADR-NNN-<title>.md` | Authoritative |
+| [rfc-template.md](rfc-template.md) | `docs/rfc/RFC-NNN-<title>.md` | Authoritative |
+| [investigation-template.md](investigation-template.md) | `docs/investigations/INV-NNN-<title>.md` | Authoritative |
+| [lesson-learned-template.md](lesson-learned-template.md) | `docs/lessons/LES-NNN-<title>.md` | Authoritative |
+| [release-template.md](release-template.md) | `docs/releases/<version>.md` | Authoritative |
+| [runbook-template.md](runbook-template.md) | `docs/operations/runbooks/<title>.md` | Authoritative |
+| [test-plan-template.md](test-plan-template.md) | Project-wide test strategy, or the native feature test-plan location | Supporting |
+| [verification-summary-template.md](verification-summary-template.md) | `docs/testing/`, or the native feature location | Supporting |
+| [temporary-work-handoff-template.md](temporary-work-handoff-template.md) | Temporary branch-root `HANDOFF.md` | Working state only |
+| [tooling-adoption-entry-template.md](tooling-adoption-entry-template.md) | `docs/governance/tooling-adoption-register.md` | Authoritative |
+| [cross-specification-delivery-plan-template.md](cross-specification-delivery-plan-template.md) | `docs/architecture/delivery-plan-<title>.md` | Authoritative |
 
-Product templates live in [../product/](../product/README.md). **No specification template is provided:** specifications are created with the native Spec Kit specify command and its native template. No phase template is provided; use native plans or the delivery-plan template.
+## Triggers
 
-## Relationship to other artifacts
-Conventions common to all templates: *Mandatory* sections must be completed; *Optional* sections may be deleted; italic guidance is removed once written; example content is labelled "Example (illustrative only)".
+| Template | Create only when |
+|---|---|
+| Vision, requirements | Adopting a new project, or a material change to product intent |
+| ADR | A significant, durable technical decision is made or revisited |
+| RFC | A material proposal needs evaluation before it can be decided |
+| Investigation | Material uncertainty blocks a specification, plan, decision, or incident |
+| Lesson | Durable learning arises and is not yet recorded elsewhere |
+| Release | A release reaches users or production |
+| Runbook | A repeatable operational procedure exists |
+| Test plan | A feature or project needs an explicit test strategy |
+| Verification summary | Evidence must be summarized for a scope and commit |
+| Temporary handoff | Work is incomplete across an agent or session boundary |
+| Tooling adoption entry | A tool is planned, piloted, enabled, disabled, or removed |
+| Delivery plan | One native feature plan is insufficient to coordinate the work |
 
-## Current scaffold state
-All eleven templates present.
+An area may remain empty. An empty area is a truthful state, not a missing
+artifact.

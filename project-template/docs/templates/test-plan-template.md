@@ -28,5 +28,32 @@
 
 ## 6. Non-functional verification (Mandatory where NFRs apply)
 ## 7. Entry and exit criteria (Mandatory)
-## 8. Evidence to retain (Mandatory)
+## 8. Commands and mechanisms (Mandatory)
+
+*Exact commands or procedures used to run each check, and where results are
+recorded.*
+
+| Check | Command or mechanism | Environment |
+|---|---|---|
+
+## 9. Result handling (Mandatory)
+
+Record every check with one canonical outcome: `PASS`, `FAIL`, `BLOCKED`,
+`NOT_RUN`, or `NOT_APPLICABLE`.
+
+- A test that was not executed is `NOT_RUN`. It is never `PASS` and never `FAIL`.
+- An unavailable prerequisite, environment, or dependency is `BLOCKED`; record the
+  cause and what is needed to run it.
+- `NOT_APPLICABLE` requires a stated reason.
+
+Entry criteria are not met while any required check is `NOT_RUN` or `BLOCKED`.
+
+## 10. Limitations and risks (Mandatory)
+*What this plan does not cover, and the risk of the resulting blind spot.*
+
+## 11. Completion and retention (Mandatory)
+*When the plan is considered executed, who accepts the results, and how long
+evidence is retained.*
+
+## 12. Evidence to retain (Mandatory)
 *Which summaries are committed and which evidence is referenced externally.*
