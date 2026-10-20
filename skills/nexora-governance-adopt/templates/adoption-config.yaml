@@ -1,0 +1,185 @@
+# Nexora Governance adoption configuration template
+#
+# This is a reusable template for any target project.
+#
+# Copy it to a temporary working location or a release-defined project
+# governance location, then populate the required values before use.
+#
+# Do not put passwords, tokens, private keys, cookies, or other secrets here.
+
+schema_version: 1
+
+project:
+  # Required. Do not proceed to apply while any required field is null.
+  name: null
+  short_name: null
+  code: null
+  repository: null
+  owner: null
+
+  # Target-project root. A relative value is resolved from the invocation
+  # directory. An adoption implementation may require an absolute resolved path
+  # in its generated plan.
+  root: "."
+
+governance:
+  # local | git
+  # Local is preferred for the first adoption.
+  source_type: "local"
+
+  # Used only when source_type is local.
+  local_path: "~/.local/share/nexora/governance"
+
+  # Clean provenance URL supplied by the Project Owner. Never embed credentials.
+  # This template ships no default: the value is deployment-specific.
+  # Leave null and stop when it has not been supplied.
+  repository: null
+
+  # Governance release version. The package under preparation declares 1.0.1.
+  version: "1.0.1"
+
+  # Required immutable release tag. Do not use main, master, HEAD, or latest.
+  # The v1.0.1 tag does not exist while the package is in preparation; verify
+  # the real tag before recording it.
+  release_tag: "v1.0.1"
+
+  # Resolved during inspection. Do not invent or manually guess this value.
+  release_commit: null
+
+adoption:
+  # inspect | plan | apply | validate | upgrade
+  mode: "plan"
+
+  model: "versioned-reference"
+  status: "proposed"
+
+  # Required for apply or upgrade. Use the version-neutral pattern
+  # governance/adopted-vX.Y.Z, for example governance/adopted-v1.0.1, and only
+  # after the selected release is verified.
+  branch_name: null
+
+  dry_run_first: true
+  require_reviewed_plan: true
+  reviewed_plan_id: null
+
+  allow_modify: false
+  allow_commit: false
+  allow_push: false
+  allow_merge: false
+  allow_tag: false
+  allow_pull_request: false
+  allow_approval: false
+
+agents:
+  # Examples: claude-code, codex, opencode, generic.
+  primary_harness: null
+
+  # Optional. Examples: 9router or direct provider. This is execution metadata,
+  # not governance authority.
+  model_router: null
+
+  # Use release defaults unless the target project has an approved variation.
+  authoritative_instruction_file: "AGENTS.md"
+  harness_adapter: null
+
+  # Recommended for governance-sensitive activity when model routing is used.
+  pin_model_route: true
+  model_route: null
+  allow_automatic_fallback: false
+
+tooling:
+  # Populate only tools relevant to the target project. Status must describe
+  # reality, not future intent.
+  forgejo:
+    status: null
+    version: null
+    purpose: "repository hosting and change review"
+
+  github_spec_kit:
+    status: null
+    version: null
+    install_during_adoption: false
+
+  ponytail:
+    status: null
+    version: null
+    install_during_adoption: false
+
+  codebase_memory_mcp:
+    status: null
+    version: null
+    install_during_adoption: false
+
+  mcp:
+    status: null
+    install_during_adoption: false
+
+  external_integrations:
+    # Add project-specific integrations only after review.
+    items: []
+    configure_during_adoption: false
+
+security:
+  require_clean_governance_checkout: true
+  require_clean_target_worktree: true
+  forbid_default_branch_apply: true
+  require_dedicated_branch: true
+  require_immutable_governance_reference: true
+  require_sanitized_repository_url: true
+
+  allow_network_in_local_mode: false
+  allow_secret_access: false
+  allow_private_key_read: false
+  allow_credential_store_read: false
+  allow_tls_verification_disable: false
+  allow_insecure_transport: false
+
+  run_project_hooks: false
+  install_repository_hooks: false
+  install_external_tools: false
+
+files:
+  # Release-defined managed files are added to the generated plan after
+  # inspection. Do not hard-code project-specific locations in this reusable
+  # template.
+  preserve: []
+  create: []
+  update: []
+  reconcile: []
+
+validation:
+  run_release_validators: true
+  run_git_diff_check: true
+  verify_no_credentials: true
+  verify_no_embedded_auth_urls: true
+  verify_no_duplicate_authority: true
+  verify_no_duplicate_spec_system: true
+  verify_no_unplanned_tools: true
+  verify_only_planned_changes: true
+
+  # Add project-specific commands only after review. Never include secrets in
+  # command strings.
+  additional_commands: []
+
+evidence:
+  retain_plan: true
+  retain_validation_report: true
+  retain_sanitized_command_results: true
+
+  # The selected governance release determines authoritative evidence paths.
+  plan_output: null
+  validation_output: null
+
+approval:
+  required: true
+  approved_by: null
+  approved_at: null
+
+  # Record only after the reviewed adoption implementation commit exists.
+  baseline_commit: null
+
+upgrade:
+  current_version: null
+  current_release_commit: null
+  require_ordered_migrations: true
+  require_impact_report: true
