@@ -8,8 +8,8 @@
   "files": [
     {
       "path": "CHANGELOG.md",
-      "sha256": "16f910e4391802f83e9893113e844ce39e15c5e5d07e7ae989eb14820624fa5e",
-      "size": 6395
+      "sha256": "3f685d5621e8a34f73c64958b7657b246c0534031c6e21800279452b978872a9",
+      "size": 6591
     },
     {
       "path": "LICENSE",
@@ -18,23 +18,23 @@
     },
     {
       "path": "README.md",
-      "sha256": "8d5d8a4742c3925dd33f87ceedc1bdc5671a841bd78f76e11f553ca920341398",
-      "size": 14313
+      "sha256": "07b1569477b1655b1ecf38b3a70e4f43d10309e50ad1cdcb7356bef9bcb497a9",
+      "size": 14063
     },
     {
       "path": "VERSION.md",
-      "sha256": "825c4d5eb443ed5ef558cce51f210898b9e14355b3f75141ce1c51b242d091fe",
-      "size": 3060
+      "sha256": "9ab4a77e5740e48edd8bd78b9be819042f86e53c989075bb03289da3650e4828",
+      "size": 3100
     },
     {
       "path": "instructions/README.html",
-      "sha256": "f1b4c4ba2c48ea6aa9a1fdbd4e3218d76cee7f5d17f7837a6b9d1495d3a88e7e",
-      "size": 21002
+      "sha256": "8f708f050514ec0a807fe79a46b03151dce23c70daf9cd1957738e77d2659b12",
+      "size": 20905
     },
     {
       "path": "instructions/README.md",
-      "sha256": "30fb66d5c70a96a80034611feb2b53378b454c00fffa77ab74a57624597d993d",
-      "size": 16089
+      "sha256": "1d43589585369d745e9dc8eca7ff83320fc41d062c71e7f9c4f323d290377325",
+      "size": 16034
     },
     {
       "path": "manual/01-governance-policy.md",
@@ -188,8 +188,8 @@
     },
     {
       "path": "manual/README.md",
-      "sha256": "545edaf5ec885ee9623626aae47e78f21172f92cfaedb978fc72b4c064cac0a6",
-      "size": 4771
+      "sha256": "09ee9065af5002156c67b8e4c1822affffbe7818292c476c8a327ceea1c8641e",
+      "size": 4728
     },
     {
       "path": "project-template/.codex/config.toml.example",
@@ -198,8 +198,8 @@
     },
     {
       "path": "project-template/ADOPTION-INSTRUCTIONS.md",
-      "sha256": "0ba29e5ba686e06347e7179107baf32a9a00e4de7d1f30c79d0083ec2eee8f04",
-      "size": 4189
+      "sha256": "80a8841005ee467f327e5a4d5723456616c95b3b516d58c4b98cfcad1dcbb632",
+      "size": 4122
     },
     {
       "path": "project-template/AGENTS.md",
@@ -208,8 +208,8 @@
     },
     {
       "path": "project-template/CENTRAL-GOVERNANCE-REFERENCE.md",
-      "sha256": "234720ce9f947fb52f612c6e22e84f296867d1d02c9c8c18b40ac2d8c187144e",
-      "size": 2293
+      "sha256": "c082bedaa8997e1e7061fb3f85f8b389aaab8c3319f887cff2374ae76a83639d",
+      "size": 2222
     },
     {
       "path": "project-template/README.md",
@@ -258,8 +258,8 @@
     },
     {
       "path": "project-template/docs/governance/governance-adoption.md",
-      "sha256": "227051115c2f83038610eb960a76af79c3a3c95c923506412df7e0457ea66bd0",
-      "size": 2858
+      "sha256": "5f747af7d54e74f02412e7770b7b950a21b3356bf406fcaa7d86f3c352b9a6c1",
+      "size": 2808
     },
     {
       "path": "project-template/docs/governance/source-of-truth-register.md",
@@ -503,8 +503,8 @@
     },
     {
       "path": "prompts/README.md",
-      "sha256": "b91b809cd58bbfabb18c9b643143ff5d893f49095fec3050305e64852344d819",
-      "size": 7285
+      "sha256": "5613ac01e6ff5494a0765966de2d400f38a3351b42caa6020952c114b43a6a57",
+      "size": 7231
     },
     {
       "path": "skills/nexora-governance-adopt/SKILL.md",
@@ -528,8 +528,8 @@
     },
     {
       "path": "skills/nexora-governance-adopt/templates/adoption-config.yaml",
-      "sha256": "71d8af7ce4442305932bb6e31372bdfba4a142c4ca02a8d221a3702d4f21835b",
-      "size": 5031
+      "sha256": "414110d0061181e2b02ac08debcbd7650ee6dfedf69123f8ec52800f968ebf9b",
+      "size": 4983
     }
   ],
   "generated": "2026-10-21",
