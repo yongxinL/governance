@@ -10,6 +10,8 @@ jobs:
     runs-on: ssh-deploy
     steps:
       - uses: actions/checkout@v4
+      - name: Install Python
+        run: apk add --no-cache python3
       - name: Manifest and generated-file integrity
         run: |
           python3 - <<'EOF'
@@ -21,7 +23,7 @@ jobs:
               b = open(f['path'], 'rb').read()
               if hashlib.sha256(b).hexdigest() != f['sha256'] or len(b) != f['size']:
                   errors.append('hash/size mismatch: ' + f['path'])
-          repo_only = ('.git/', '.forgejo/', 'maintenance/', '.gitattributes')
+          repo_only = ('.git/', '.forgejo/', 'maintenance/', '.gitattributes', '.gitignore')
           for d, _, fs in os.walk('.'):
               for name in fs:
                   p = os.path.relpath(os.path.join(d, name)).replace(os.sep, '/')
