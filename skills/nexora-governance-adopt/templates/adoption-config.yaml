@@ -35,12 +35,11 @@ governance:
   # Leave null and stop when it has not been supplied.
   repository: null
 
-  # Governance release version. The package under preparation declares 1.0.1.
+  # Governance release version. The released package declares 1.0.1.
   version: "1.0.1"
 
   # Required immutable release tag. Do not use main, master, HEAD, or latest.
-  # The v1.0.1 tag does not exist while the package is in preparation; verify
-  # the real tag before recording it.
+  # Verify the exact central release, tag, and commit before recording them.
   release_tag: "v1.0.1"
 
   # Resolved during inspection. Do not invent or manually guess this value.

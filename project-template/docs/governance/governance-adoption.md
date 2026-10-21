@@ -7,7 +7,7 @@
 | Governance mode | `solo` |
 | Central repository | `<GOVERNANCE_REPOSITORY_URL>` |
 | Scaffold source version | 1.0.1 |
-| Planned release tag | `v1.0.1` |
+| Release tag | `v1.0.1` |
 | Adopted version | `<ADOPTED_VERSION>` |
 | Adopted immutable tag | `<ADOPTED_TAG>` |
 | Scaffold initialization date | `<SCAFFOLD_INITIALIZED_DATE>` |
@@ -37,9 +37,9 @@ A scaffold initialization date is never an adoption approval date. An adoption
 review is never an approval. This record must not be pre-populated with an
 approver, an approval mode, an approval date, or completed validation evidence.
 
-The rows above describe the package this scaffold was copied **from**. While that
-package is in preparation its planned tag does not exist. Record
-`<ADOPTED_VERSION>` and `<ADOPTED_TAG>` only after verifying the real release.
+The rows above describe the package this scaffold was copied **from**. Record
+`<ADOPTED_VERSION>` and `<ADOPTED_TAG>` only after verifying the exact release
+and its package integrity.
 
 ## Previous release baseline
 

@@ -4,13 +4,13 @@
 |---|---|
 | Governance name | Nexora Governance |
 | Version | 1.0.1 |
-| Planned release tag | `v1.0.1` |
-| Release status | Draft for release |
-| Release date | Pending |
+| Release tag | `v1.0.1` |
+| Release status | Released |
+| Release date | 2026-10-21 |
 | Tooling guidance verified | 2026-10-12 |
 
-The `v1.0.1` tag does not exist yet. This file records release intent, not a
-published release.
+This file records the finalized local release. It does not claim that the tag,
+branch, archive, or release has been published or uploaded externally.
 
 ## Verified 1.0.0 baseline
 
@@ -50,7 +50,7 @@ Spec Kit ownership.
 
 ## Compatibility and adoption notes
 
-- Projects adopt this release explicitly by recording repository, version `1.0.1`, and planned tag `v1.0.1` in `docs/governance/governance-adoption.md`.
+- Projects adopt this release explicitly by recording repository, version `1.0.1`, and release tag `v1.0.1` in `docs/governance/governance-adoption.md`.
 - Projects never track the central default branch.
 - A project already adopted on `1.0.0` requires no migration. The corrections in
   this release are documentation corrections and clarifications, not changes to

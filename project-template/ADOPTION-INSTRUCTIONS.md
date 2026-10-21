@@ -1,7 +1,7 @@
 # Adoption Instructions
 
-Project-local adoption checklist for Nexora Governance v1.0.1 (planned tag
-`v1.0.1`, which does not exist yet). The complete procedure is owned by central manual chapter 30; this file sequences it for this repository.
+Project-local adoption checklist for Nexora Governance v1.0.1 (release tag
+`v1.0.1`). The complete procedure is owned by central manual chapter 30; this file sequences it for this repository.
 
 ## 1. Install the full scaffold
 
@@ -34,11 +34,10 @@ Record the governance repository location supplied by the Project Owner as
 `<GOVERNANCE_REPOSITORY_URL>`, the adopted version, and the verified immutable
 release tag. Never reference the central default branch.
 
-While the package is in preparation its planned tag does not exist. Record an
-adopted tag only after verifying the real release. The `1.0.0` release was
-declared Released on 2026-10-12 at baseline `d00dcab5f70c083a37d612e48eacb67e38aa272e`,
-but no `v1.0.0` tag was found locally or on origin, so it must not be recorded as
-an immutable adopted tag.
+Record an adopted tag only after verifying the exact release and its package
+integrity. The `1.0.0` release was declared Released on 2026-10-12 at baseline
+`d00dcab5f70c083a37d612e48eacb67e38aa272e`, but no `v1.0.0` tag was found locally
+or on origin, so it must not be recorded as an immutable adopted tag.
 
 ## 4. Solo-owner mode
 

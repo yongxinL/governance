@@ -1,13 +1,12 @@
 # Nexora Governance Manual v1.0.1
 
 **Version:** 1.0.1
-**Planned release tag:** `v1.0.1`
-**Status:** Draft for release
-**Release date:** Pending
+**Release tag:** `v1.0.1`
+**Status:** Released
+**Release date:** 2026-10-21
 **Chapters:** 30
 
-The `v1.0.1` tag does not exist yet. This manual describes the release in
-preparation.
+This manual is the organization-wide reference for released version 1.0.1.
 
 ## Purpose
 
@@ -77,8 +76,8 @@ The adopted immutable governance release and foundational controls define govern
 
 ## Versioning
 
-This manual belongs to release `1.0.1`, which is in preparation for tag
-`v1.0.1`. The tag does not exist yet.
+This manual belongs to release `1.0.1`, recorded as Released on 2026-10-21 for
+tag `v1.0.1`.
 
 The `1.0.0` release was declared Released on 2026-10-12 at the verified source
 baseline commit `d00dcab5f70c083a37d612e48eacb67e38aa272e`. No local or origin

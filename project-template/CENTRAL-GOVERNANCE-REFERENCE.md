@@ -5,7 +5,7 @@
 | Governance | Nexora Governance |
 | Governance repository | `<GOVERNANCE_REPOSITORY_URL>` |
 | Adopted version | `1.0.1` |
-| Planned release tag | `v1.0.1` |
+| Release tag | `v1.0.1` |
 | Verified package identity | `MANIFEST.json` SHA-256 for every file except itself |
 | Adoption record | `docs/governance/governance-adoption.md` |
 | Project owner | `<PROJECT_OWNER>` |
@@ -22,9 +22,9 @@ This project is governed by the Nexora Governance release identified above. The
 central manual at that release is authoritative for governance rules; this file
 is a pointer and does not copy them.
 
-This file records release intent, not a completed release. The `v1.0.1` tag does
-not exist while the package is in preparation. Once the immutable tag exists,
-replace the planned-tag row with the real tag and verify it before recording it.
+This scaffold identifies governance release `1.0.1` and release tag `v1.0.1`.
+Verify the exact central release and package integrity before recording the
+adopted immutable tag.
 
 ## Verified baseline of the previous release
 

@@ -2,12 +2,14 @@
 
 All notable changes to Nexora Governance are recorded here. Each entry corresponds to an immutable release tag. Entries distinguish **governance policy** from **version-sensitive tooling procedures**.
 
-## [1.0.1] - Draft for release · planned tag `v1.0.1`
+## [1.0.1] - 2026-10-21 · Released · tag `v1.0.1`
 
 Project Owner-approved corrective documentation release.
 
-This entry is a work-in-progress record. Items marked *pending* have not been
-completed or validated at the time of writing and must not be read as done.
+This release was finalized after repository-wide validation, generated-file
+regeneration, manifest regeneration, deterministic archive construction, and
+clean-extraction validation. External publication and upload remain separate
+actions.
 
 ### Verified baseline and release-state corrections
 
@@ -69,15 +71,15 @@ completed or validated at the time of writing and must not be read as done.
   ownership, workflow ownership, identifier meaning, mandatory approvals, or
   native GitHub Spec Kit ownership.
 
-### Pending
+### Release finalization
 
-The following have not been performed at the time of writing:
-
-- regeneration of `instructions/README.html` from its Markdown source;
-- regeneration of `MANIFEST.json`;
-- deterministic release archive build and clean-extraction validation;
-- the eight release gates;
-- final release authorization, tagging, and publication.
+- Regenerated `instructions/README.html` from its Markdown source.
+- Completed repository-wide validation and all eight release gates.
+- Regenerated `MANIFEST.json` after all package content was final.
+- Built the deterministic release archive twice, confirmed byte-identical
+  output, and validated clean extraction.
+- Created the local annotated `v1.0.1` release tag at the final manifest commit
+  after validation passed.
 
 ### Upgrade impact
 

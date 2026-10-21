@@ -1,13 +1,13 @@
 # Nexora Governance v1.0.1
 
 **Version:** 1.0.1
-**Planned release tag:** `v1.0.1`
-**Status:** Draft for release
-**Release date:** Pending
+**Release tag:** `v1.0.1`
+**Status:** Released
+**Release date:** 2026-10-21
 **Tooling guidance verified:** 2026-10-12
 
-The `v1.0.1` tag does not exist yet. This package describes a release in
-preparation.
+Release 1.0.1 is recorded as released on 2026-10-21. Projects must still verify
+the immutable tag and package integrity before adoption.
 
 ## Overview
 
@@ -265,7 +265,7 @@ See [instructions/README.md#daily-use](instructions/README.md#daily-use).
 
 ## Version and release model
 
-Version `1.0.1` is in preparation for tag `v1.0.1`. The tag does not exist yet.
+Release `1.0.1` is recorded as Released on 2026-10-21 for tag `v1.0.1`.
 
 Version `1.0.0` was declared Released on 2026-10-12 at source baseline
 `d00dcab5f70c083a37d612e48eacb67e38aa272e`. No `v1.0.0` tag was found in the
@@ -324,19 +324,12 @@ to this package must preserve source-of-truth ownership, update affected
 cross-references, regenerate derivative artifacts, regenerate `MANIFEST.json`,
 and pass all release gates before a new immutable tag is published.
 
-## Release preparation for v1.0.1
+## Release record for v1.0.1
 
 These corrections are additive and corrective. They must not be published under
 the `v1.0.0` identity, and no existing tag is moved or rewritten.
 
-Before publishing `v1.0.1`:
-
-1. update `VERSION.md` and `CHANGELOG.md`;
-2. verify all manual, prompt, template, and skill cross-references;
-3. regenerate `instructions/README.html` from `instructions/README.md`;
-4. run the eight release gates;
-5. validate a clean release archive extraction;
-6. regenerate `MANIFEST.json` last;
-7. compute and publish the release archive SHA-256;
-8. create the immutable tag `v1.0.1` only after all gates pass and the Project
-   Owner gives separate final-release authorization.
+Release `v1.0.1` is finalized only after all source, generated-file, manifest,
+archive, clean-extraction, and eight-gate validation checks pass. External
+publication, upload, deployment, and merge remain separate Project Owner
+decisions.

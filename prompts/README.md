@@ -1,13 +1,12 @@
 # Nexora Prompt Collection v1.0.1
 
 **Version:** 1.0.1
-**Planned release tag:** `v1.0.1`
-**Status:** Draft for release
-**Release date:** Pending
+**Release tag:** `v1.0.1`
+**Status:** Released
+**Release date:** 2026-10-21
 **Prompt count:** 22
 
-The `v1.0.1` tag does not exist yet. This collection describes the release in
-preparation.
+This collection belongs to released version 1.0.1.
 
 ## Purpose
 

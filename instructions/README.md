@@ -1,12 +1,11 @@
 # Nexora Governance v1.0.1: Instructions
 
 **Version:** 1.0.1
-**Planned release tag:** `v1.0.1`
-**Status:** Draft for release
-**Release date:** Pending
+**Release tag:** `v1.0.1`
+**Status:** Released
+**Release date:** 2026-10-21
 
-The `v1.0.1` tag does not exist yet. This file is the authoritative adoption
-source for the release in preparation.
+This file is the authoritative adoption source for released version 1.0.1.
 
 > `instructions/README.html` is generated from this file and must not be edited
 > directly. If the files differ, this Markdown source is authoritative and the
